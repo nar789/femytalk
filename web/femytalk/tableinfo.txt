@@ -1,0 +1,4 @@
+create table user(id int primary key auto_increment,name varchar(255), sex int, age varchar(255),region varchar(255),upto varchar(255),img varchar(255),buddy text,chatstate datetime,chatid int,msg text,loginstate datetime);
+
+
+create table chat(id int primary key auto_increment,type int,name varchar(255),member text);
