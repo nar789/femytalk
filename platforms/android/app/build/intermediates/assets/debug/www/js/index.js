@@ -140,14 +140,32 @@ function getmsg(e){
 	else if(r.msg=="user-save-success"){
 		halert("회원가입이 완료되었습니다.");
 	}
+    else if(r.msg=="user-update-success"){
+        halert("회원정보 수정이 완료되었습니다.");
+    }
     else if(r.msg=="add-friend-fail"){
         halert("이미 친구추가된 페미입니다.");
+    }
+    else if(r.msg=="i-am-ban"){
+        halert("방장에 의한 강퇴로 참여하실 수 없습니다.");
+    }
+    else if(r.msg=="ban-complete"){
+        halert("강퇴를 완료하였습니다.");
+    }
+    else if(r.msg=="ban-only-king"){
+        halert("방장만 강퇴를 할 수 있습니다.");
+    }
+    else if(r.msg=="declare-complete"){
+        halert("신고하기가 완료되었습니다.");
     }
     else if(r.msg=="add-friend-success"){
         halert("친구추가가 완료되었습니다.");
     }
     else if(r.msg=="remove-friend-success"){
         halert("친구삭제가 완료되었습니다.");
+    }
+    else if(r.msg=="buy-complete"){
+        halert("결제가 완료되었습니다.");
     }
     else if(r.msg=="create-chat-success"){
         halert("방만들기가 완료되었습니다.");
@@ -175,6 +193,7 @@ function getnumber(){
 			var msg="{\"phone\":\""+r.phoneNumber+"\"}";
  			document.getElementById("ifr").contentWindow.postMessage(msg,"*");
             clearInterval(gn);
+            $("#intro").animate({opacity:'0'},"slow",function(){ $("#intro").remove(); });
 		}, (e)=>{alert(e);});
 	}, (e)=>{
 		alert(e);
@@ -183,7 +202,7 @@ function getnumber(){
 
 
 var app = {
-    // Application Constructor
+    // Application ConstructorW
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },

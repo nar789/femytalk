@@ -7,6 +7,33 @@ function photo(){
 
 window.addEventListener("message",getmsg,false);
 
+window.onload=init();
+
+function init(){
+	if(p){
+		$.get("getuser.php?p="+p,function(d,e){
+			var u=JSON.parse(d);
+			
+			$("#photo").css("display","none");
+			$("#plus").css("display","none");
+			$("#photo2").css("display","block");
+			$("#photo2").attr("src",u.img);
+			$("#name").attr("disabled","disabled");
+			$("#name").val(u.name);
+			$("#sex").attr("disabled","disabled");
+			$("#sex").val(u.sex);
+
+			$("#age").val(u.age);
+			var region=u.region.split(" ");
+			$("#region1").val(region[0]);
+			$("#region2").val(region[1]);
+			$("#upto").val(u.upto);
+			check=1;
+			phone=p;
+		});
+	}
+}
+
 function getmsg(e){
 	var r=JSON.parse(e.data);
 	if(r.phone)
@@ -62,6 +89,27 @@ function save(){
 		window.parent.postMessage(msg,"*");
 		return false;	
 	}
+	if(p)
+	{
+		$.post("updateuser.php",{
+			name:name,
+			sex:sex,
+			age:age,
+			r1:r1,
+			r2:r2,
+			upto:upto,
+			url:url,
+			phone:phone
+		},function(d,s){
+			if(d=="success"){
+				var msg="{\"msg\":\"user-update-success\"}";
+				window.parent.postMessage(msg,"*");
+			}else{
+				alert(d);
+			}
+		});
+		return;
+	}
 	$.post("usersave.php",{
 		name:name,
 		sex:sex,
@@ -79,5 +127,5 @@ function save(){
 		}else{
 			alert(d);
 		}
-	})
+	});
 }

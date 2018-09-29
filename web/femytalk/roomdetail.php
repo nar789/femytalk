@@ -87,16 +87,18 @@
 
     		<center class="mt-3">
     			<div style="height: 30px; background-color: #f07171; 
-    			height: 40px;
-    			line-height: 40px;
+    			height: 50px;
+    			line-height: 50px;
     			color:white;
+                font-size: 17px;
     			width:43%;display: inline-block;" class="mr-3"
     			onclick="enter(<?php echo $_GET['id']; ?>,p)"
     			>입장하기</div>
     			<div onclick="history.back()" style="height: 30px; background-color: #748499; 
-    			height: 40px;
+    			height: 50px;
     			color:white;
-    			line-height: 40px;
+    			line-height: 50px;
+                font-size: 17px;
     			width:43%;display: inline-block;">닫기</div>
     		</center>
 

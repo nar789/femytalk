@@ -9,8 +9,97 @@
 
         <title>femytalk</title>
     </head>
-    <body style="background-color: white;">
-        
+    <body style="background-color: white;overflow: hidden;">
+        <script>
+        <?php
+            echo "var id=".$_GET['id'].";";
+            echo "var p='".$_GET['p']."';";
+        ?>
+        </script>
+
+        <?php
+            include ("dblib.php");
+            $conn=mysqli_connect($db_host,$db_user,$db_passwd,$db_name);
+            if (!$conn) {
+                echo "error";
+            }
+            $id=$_GET['id'];
+            $result=mysqli_query($conn,"select * from chat where id=$id");
+            $row=mysqli_fetch_array($result);
+        ?>
+
+
+        <div style="background-color: rgba(0,0,0,0.5); width: 100%; height: 100%; overflow: scroll;
+        display: none;
+        padding-top: 100px;
+        position: absolute; top:0px; z-index: 10;" id=ban-g >
+
+
+                <div 
+                class="pr-3"
+            style="height: 40px;
+            width: 100%;
+            line-height: 40px;
+            text-align: right;
+            display: inline-block;"
+            onclick="plusclose()"
+            ><img src='img/close.png' style="width: 20px"></div>
+
+            <div style="height: auto; background-color:#445061; " class="pb-3 pt-3">
+
+
+                
+
+
+            <?php
+
+                $r=json_decode($row['member']);
+
+                for($i=0;$i<count($r);$i++){
+                    
+                    $result2=mysqli_query($conn,"select * from user where phone='".$r[$i]->phone."'");
+                    $row2=mysqli_fetch_array($result2);          
+
+                    echo "<center id='person".$i."'><div ";
+                    echo "class='mt-3 pl-3'  style='width:92%;";
+                    echo "text-align: left;";
+                    echo "height: 30px;";
+                    echo "border-bottom: 1px solid black;";
+                    echo "font-size: 13px; color:white;'";
+                    echo ">";
+                    echo "<div style='width:20px;height:20px; border:1px solid black; ";
+                    echo "display:inline-block;";
+                    echo "text-align:center;line-height:20px;";
+                    echo "background-color:white;";
+                    echo "' class='mr-2' onclick='checkbox_click(\"".$r[$i]->phone."\",".$i.",".count($r).")'>";
+                    echo "<img src='img/chat_check.png' style='visibility:hidden;width:15px;height:15px;' id='check".$i."'>";
+                    echo "</div>";
+                    if($i==0)
+                        echo "[방장] ";
+                    echo $row2['name']."/".$row2['sex']."/".$row2['age']."/".$row2['upto'];
+                    echo "</div></center>";
+                }
+            ?>
+
+
+
+                <center class="mt-3">
+                <div style="height: 30px; background-color: #f07171; 
+                height: 50px;
+                line-height: 50px;
+                color:white;
+                width:43%;display: inline-block;" class="mr-3"
+                onclick="declare()"
+                >신고하기</div>
+                <div style="height: 30px; background-color: #748499; 
+                height: 50px;
+                color:white;
+                line-height: 50px;
+                width:43%;display: inline-block;" onclick="ban()">강퇴하기</div>
+            </center>
+            </div>
+
+        </div>
 
          <div style="background-color: #F17171;
         height: 50px;line-height: 50px;
@@ -39,7 +128,7 @@
         </div>
         
         <img src='img/chat_btn_menu.png' style="
-        width:20px;float:right;margin-top:15px;">
+        width:20px;float:right;margin-top:15px;" onclick="plus()">
         <img 
         onclick="back()"
         src='img/chat_btn_back.png' style="
@@ -67,14 +156,19 @@
             </div>//-->
         </div>
 
-        <div style="height:50px;position: absolute; bottom:0px; border-top:1px solid #ededed;
+        <div id=msg-g style="height:50px;position: absolute; bottom:0px; border-top:1px solid #ededed;
         width:100%;">
+            <div style="width: 30px; height: 30px; border:2px solid #bfc0c7; text-align: center; display: inline-block;
+            border-radius: 10px;" class="ml-3" onclick="imgclick()">
+                <img src='img/chatting_plus.png' style="width: 10px; height: 10px;">
+            </div>
             <input
             id=msg
-            type=text style="height: 50px; width:250px; border:0px;
+            type=text style="height: 50px; width:200px; border:0px;
+            outline-style: none;
             color:#999999;
             display: inline-block;"
-            class="pl-3" placeholder="대화 입력" >
+            class="pl-1" placeholder="대화 입력" >
             <div 
             onclick="sendmsg()"
             style="height: 30px; display: inline-block; background-color:#F17171; width: 80px;
@@ -83,12 +177,6 @@
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script>
-        <?php
-            echo "var id=".$_GET['id'].";";
-            echo "var p='".$_GET['p']."';";
-        ?>
-        </script>
         <script type="text/javascript" src="js/chat.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </body>

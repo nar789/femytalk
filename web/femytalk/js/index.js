@@ -73,5 +73,8 @@ function getmsg(e){
 	if(r.msg=="go-chat"){
 		window.parent.postMessage(e.data,"*");
 	}
+	if(r.msg=="i-am-ban"){
+		window.parent.postMessage(e.data,"*");
+	}
 
 }

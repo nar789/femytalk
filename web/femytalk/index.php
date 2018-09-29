@@ -13,49 +13,63 @@
         <div style="background-color: #F17171;
         height: 50px;line-height: 50px;
         color:white;font-weight: bold; font-size:20px;" class="pl-3 pr-3">페미톡<img src='img/setup.png' style="
-        width:30px;float:right;margin-top:10px;"></div>
+        width:30px;float:right;margin-top:10px;" onclick="javascript:location.href='setting.php';"></div>
         <div style="background-color: #F59593; width:100%; height:1px;"></div>
-        <div style="height: 90px; background-color: #f17171;padding-top:10px;">
+        <div style="height: 90px; background-color: #f17171;margin:0px;">
             <center>
-                <div class="nav-btn mr-3" style="display: inline-block;" onclick="menuclick(1)">
-                    <div class="circle" style="width:50px;height:50px;background-color: #F59593; border-radius:50px;padding-top:8px;">
+                <div class="nav-btn" style="display: inline-block;margin-top:15px; height: 60px; width: 18%;" onclick="menuclick(1)">
+                    <center>
+                    <div class="circle" style="width:45px;height:45px;background-color: #F59593; border-radius:45px;line-height: 45px;">
                         <center>
-                            <img src='img/mainmenu_on_01.png' style="width: 30px;" id=i1> 
+                            <img src='img/mainmenu_on_01.png' style="width: 20px;" id=i1> 
                         </center>
                     </div>
-                    <p style="color:white;font-size:12px;">홈</p>
+                    <p style="color:white;font-size:12px;width: 45px; text-align: center;margin:0px; padding:0px;">홈</p>
+                    </center>
                 </div>
-                <div class="nav-btn mr-3" style="display: inline-block;" onclick="menuclick(2)">
-                    <div class="circle" style="width:50px;height:50px;background-color: #F59593; border-radius:50px;padding-top:8px;">
+
+                <div class="nav-btn" style="display: inline-block;margin-top:15px; height: 60px; width: 18%;" onclick="menuclick(2)">
+                    <center>
+                    <div class="circle" style="width:45px;height:45px;background-color: #F59593; border-radius:45px;line-height: 45px;">
                         <center>
-                            <img src='img/mainmenu_off_02.png' style="width: 30px;" id=i2>
+                            <img src='img/mainmenu_off_02.png' style="width: 20px;" id=i2>
                         </center>
                     </div>
-                    <p style="color:white;font-size:12px;">페미</p>
+                    
+                    <p style="color:white;font-size:12px;width: 45px; text-align: center;margin:0px; padding:0px;">페미</p>
+                    </center>
                 </div>
-                <div class="nav-btn mr-3" style="display: inline-block;" onclick="menuclick(3)">
-                    <div class="circle" style="width:50px;height:50px;background-color: #F59593; border-radius:50px;padding-top:8px;">
+                <div class="nav-btn" style="display: inline-block;margin-top:15px; height: 60px; width: 18%;" onclick="menuclick(3)">
+                    <center>
+                    <div class="circle" style="width:45px;height:45px;background-color: #F59593; border-radius:45px;line-height: 45px;">
                         <center>
-                            <img src='img/mainmenu_off_03.png' style="width: 30px;" id=i3>
+                            <img src='img/mainmenu_off_03.png' style="width: 20px;" id=i3>
                         </center>
                     </div>
-                    <p style="color:white;font-size:12px;">MY페미</p>
+                    
+                    <p style="color:white;font-size:12px;width: 45px; text-align: center;margin:0px; padding:0px;">MY페미</p>
+                    </center>
                 </div>
-                <div class="nav-btn mr-3" style="display: inline-block;" onclick="menuclick(4)">
-                    <div class="circle" style="width:50px;height:50px;background-color: #F59593; border-radius:50px;padding-top:8px;">
+                <div class="nav-btn" style="display: inline-block;margin-top:15px; height: 60px; width: 18%;" onclick="menuclick(4)">
+                    <center>
+                    <div class="circle" style="width:45px;height:45px;background-color: #F59593; border-radius:45px;line-height: 45px;">
                         <center>
-                            <img src='img/mainmenu_off_04.png' style="width: 30px;" id=i4>
+                            <img src='img/mainmenu_off_04.png' style="width: 20px;" id=i4>
                         </center>
                     </div>
-                    <p style="color:white;font-size:12px;">페미판</p>
+                    
+                    <p style="color:white;font-size:12px;width: 45px; text-align: center;margin:0px; padding:0px;">페미판</p>
+                    </center>
                 </div>
-                <div class="nav-btn" style="display: inline-block;" onclick="menuclick(5)">
-                    <div class="circle" style="width:50px;height:50px;background-color: #F59593; border-radius:50px;padding-top:8px;">
+                <div class="nav-btn" style="display: inline-block;margin-top:15px; height: 60px; width: 18%;" onclick="menuclick(5)">
+                    <center>
+                    <div class="circle" style="width:45px;height:45px;background-color: #F59593; border-radius:45px;line-height: 45px;">
                         <center>
-                            <img src='img/mainmenu_off_05.png' style="width: 30px;" id=i5>
+                            <img src='img/mainmenu_off_05.png' style="width: 20px;" id=i5>
                         </center>
                     </div>
-                    <p style="color:white;font-size:12px;">방만들기</p>
+                    <p style="color:white;font-size:12px;width: 45px; text-align: center;margin:0px; padding:0px;">방만들기</p>
+                    </center>
                 </div>
             </center>
         </div>

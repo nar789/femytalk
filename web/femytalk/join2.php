@@ -9,21 +9,25 @@
     </head>
 
     <body>
-
+        <script>
+            <?php
+                echo "var p=\"".$_GET['p']."\";";
+            ?>
+        </script>
     	<div style="height:250px;
     	background-image: url('img/pat.png');
     	background-size: 20px;
     	">
-    		<img src='img/join_btn_back.png' style="width: 20px;" class="ml-3 mt-3">
+    		<img src='img/join_btn_back.png' style="width: 20px;" class="ml-3 mt-3" onclick="history.go(-1)">
     		<center><div onclick="photo();" style="width:120px; height: 120px; background-color: #f59593; border-radius: 150px;
-    		line-height: 110px;"
+    		line-height: 120px;"
     			class="mt-3">
     				<img id=photo2 src="" style="display: none;width: 100%; height: 100%;
     				border-radius: 50px;">
     				<img id=photo src='img/join_thumbnail_camera.png' style="width:50px;">
-    				<div id=plus style="width:50px;height:50px;background-color: white;
-    				border-radius: 50px;margin-left:80px;margin-top: -40px;">
-    					<img src='img/join_thumbnail_btn_add.png' style="width:25px;margin-top: -60px;">
+    				<div id=plus style="width:40px;height:40px;background-color: white;
+    				border-radius: 40px;margin-left:80px;margin-top: -40px; position: relative;">
+    					<img src='img/join_thumbnail_btn_add.png' style="width:20px;position: absolute; top:10px;left:10px;">
     				</div>
     			</div>
     			<p style="color:white;" class="mt-3">프로필사진</p>
@@ -36,7 +40,7 @@
     		>
     			<p 
     			style="display: inline-block;
-    			font-size: 15px;
+    			font-size: 16px;
     			color:gray;font-weight: bold;" class="mr-1">성별</p>
     			<!--<input type=text style="height: 100%; border:0px;">//-->
     			
@@ -53,7 +57,7 @@
     		>
     			<p 
     			style="display: inline-block;
-    			font-size: 15px;
+    			font-size: 16px;
     			color:gray;font-weight: bold;" class="mr-1">닉네임</p>
     			
     			<div style="
@@ -64,7 +68,7 @@
     			border-radius: 5px;
     			line-height: 40px;
     			width: 60px;
-    			font-size: 12px;
+    			font-size: 14px;
     			text-align: center;
     			display: inline-block;
     			" class="ml-2" onclick="namecheck()">중복확인</div>
@@ -79,7 +83,7 @@
     		>
     			<p 
     			style="display: inline-block;
-    			font-size: 15px;
+    			font-size: 16px;
     			color:gray;font-weight: bold;" class="mr-1">나이</p>
     			
     			<select id=age style="float:right;border:0px;color:#f07171; width:60px;background-color: transparent;
@@ -100,17 +104,17 @@
     		>
     			<p 
     			style="display: inline-block;
-    			font-size: 15px;
+    			font-size: 16px;
     			color:gray;font-weight: bold;" class="mr-1">지역</p>
 
-    			<select id=region1 style="float:right;border:0px;color:#f07171; width:60px;background-color: transparent;
+    			<select id=region2 style="float:right;border:0px;color:#f07171; width:60px;background-color: transparent;
 	    			height: 40px; width:80px;" class="ml-3">
 	    				<option selected="selected">강남구</option>
 	    			</select>
     			
-    			<select id=region2 style="float:right;border:0px;color:#f07171; width:60px;background-color: transparent;
+    			<select id=region1 style="float:right;border:0px;color:#f07171; width:60px;background-color: transparent;
 	    			height: 40px;">
-	    				<option selected="selected">서울</option>
+	    				<option selected="selected">서울시</option>
 	    		</select>
     			
     		</div>
@@ -121,7 +125,7 @@
     		>
     			<p 
     			style="display: inline-block;
-    			font-size: 15px;
+    			font-size: 16px;
     			color:gray;font-weight: bold;" class="mr-1">유입경로</p>
 
     			<select id=upto style="float:right;border:0px;color:#f07171; width:60px;background-color: transparent;
@@ -135,12 +139,13 @@
     			style="
     			text-align: center;
     			width: 300px;
-    			height: 40px;
-    			line-height: 40px;
+    			height: 50px;
+    			line-height: 50px;
     			color:white;
     			font-weight: bold;
-    			background-color:#f07171; 
-    			border-radius: 30px;" class="mt-5" onclick="save()">저장하기</div></center>
+    			background-color:#f07171;
+                font-size: 17px; 
+    			border-radius: 30px;" class="mt-4" onclick="save()">저장하기</div></center>
 
 
 
