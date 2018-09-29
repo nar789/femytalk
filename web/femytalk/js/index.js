@@ -10,7 +10,7 @@ function menuclick(id){
 	}
 	$("#i"+id).attr("src","img/mainmenu_on_0"+id+".png");
 	if(id==1){
-		$("#ifr").attr("src","home.php");
+		$("#ifr").attr("src","home.php?phone="+phone);
 	}else if(id==2){
 		$("#ifr").attr("src","femy.php?phone="+phone);
 	}else if(id==3){
@@ -18,7 +18,7 @@ function menuclick(id){
 	}else if(id==4){
 		$("#ifr").attr("src","pan.php");
 	}else if(id==5){
-		$("#ifr").attr("src","mkroom.php");
+		$("#ifr").attr("src","mkroom.php?phone="+phone);
 	}
 }
 
@@ -29,11 +29,17 @@ function init(){
 	window.addEventListener("message",getmsg,false);
 	var msg="{\"msg\":\"get-phone\"}";
 	window.parent.postMessage(msg,"*");
+	var ifr=document.getElementById("ifr");
+	var winh=$(window).height();
+	h=parseInt(winh)-181-30;
+	ifr.style.height=h+'px';
 }
 
 function start_update_loginstate(){
 	ls=setInterval(()=>{
-		$.get("updateloginstate.php?phone="+phone,function(d,e){ready_finish=true;});
+		$.get("updateloginstate.php?phone="+phone,function(d,e){ready_finish=true;
+			
+		});
 	},1000);
 }
 
@@ -43,6 +49,7 @@ function getmsg(e){
 	if(r.phone)
 	{
 		phone=r.phone;
+		$("#ifr").attr("src","home.php?phone="+phone);
 		start_update_loginstate();
 	}
 	if(r.msg=="img-view"){
@@ -57,6 +64,14 @@ function getmsg(e){
 	if(r.msg=="remove-friend-success"){
 		window.parent.postMessage(e.data,"*");
 	}
-
+	if(r.msg=="create-chat-success"){
+		window.parent.postMessage(e.data,"*");
+	}
+	if(r.msg=="go-home"){
+		window.parent.postMessage(e.data,"*");
+	}
+	if(r.msg=="go-chat"){
+		window.parent.postMessage(e.data,"*");
+	}
 
 }

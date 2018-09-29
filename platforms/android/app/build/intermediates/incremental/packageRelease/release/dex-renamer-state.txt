@@ -1,0 +1,4 @@
+#Mon Sep 17 00:23:54 KST 2018
+base.0=C\:\\Users\\leejunghun\\cordovaproject\\femytalk\\platforms\\android\\app\\build\\intermediates\\transforms\\dex\\release\\0
+renamed.0=classes.dex
+file.0=C\:\\Users\\leejunghun\\cordovaproject\\femytalk\\platforms\\android\\app\\build\\intermediates\\transforms\\dex\\release\\0\\classes.dex

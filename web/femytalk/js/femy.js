@@ -1,3 +1,5 @@
+
+
 function imgclick(img) {
 
 	var msg="{\"msg\":\"img-view\",\"url\":\""+img.src+"\"}";

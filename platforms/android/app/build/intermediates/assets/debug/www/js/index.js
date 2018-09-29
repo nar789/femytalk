@@ -149,9 +149,19 @@ function getmsg(e){
     else if(r.msg=="remove-friend-success"){
         halert("친구삭제가 완료되었습니다.");
     }
+    else if(r.msg=="create-chat-success"){
+        halert("방만들기가 완료되었습니다.");
+        $("#ifr").attr("src","http://kirino16.cafe24.com/chat.php?id="+r.id+"&p="+my);
+    }
+    else if(r.msg=="go-chat"){
+        $("#ifr").attr("src","http://kirino16.cafe24.com/chat.php?id="+r.id+"&p="+my);
+    }
     else if(r.msg=="get-phone"){
         var msg="{\"phone\":\""+my+"\"}";
         document.getElementById("ifr").contentWindow.postMessage(msg,"*");
+    }
+    else if(r.msg=="go-home"){
+        $("#ifr").attr("src","http://kirino16.cafe24.com/index.php");   
     }
     else if(r.msg=="img-view"){
         PhotoViewer.show(r.url, 'Image');

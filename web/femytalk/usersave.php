@@ -16,7 +16,7 @@
 	    echo "error";
 	}
 
-	$result=mysqli_query($conn,"insert into user values(null,'$name','$sex','$age','$region','$upto','$url','',null,null,'',null,'$phone')");
+	$result=mysqli_query($conn,"insert into user values(null,'$name','$sex','$age','$region','$upto','$url','[]',null,null,'',null,'$phone')");
 	if($result)echo "success";
 	else echo "fail";
 ?>

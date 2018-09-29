@@ -15,7 +15,7 @@
 			if (!$conn) {
 			    echo "error";
 			}
-
+			//$result=mysqli_query($conn,"select * from user");
 			$result=mysqli_query($conn,"select * from user where time_to_sec(timediff(now(),loginstate))<3 order by loginstate desc");
 			//$result=mysqli_query($conn,"select * from user order by loginstate desc");
 			if(mysqli_num_rows($result)==0){

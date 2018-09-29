@@ -78,8 +78,12 @@
         display: inline-block;background-color:#f5f5f5">
             <center><img src='img/btn_refresh.png' style="height:25px;"></center>
         </div>
-
-        <iframe src='mkroom.php' style="border:0px; width:100%; height:100%;" id=ifr></iframe>
+        
+        <iframe 
+        id=ifr
+        src='home.php' style="border:0px; width:100%; height:100%;" id=ifr
+        onload="resize(this)"
+        ></iframe>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

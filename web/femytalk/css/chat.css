@@ -1,0 +1,33 @@
+.msg{
+	height: 35px;
+}
+.you-name{
+	height: 35px; width:30%;background-color:white;
+                line-height: 35px;
+                text-align: right;
+                display: inline-block;
+                color:#1bd194; 
+}
+.you-msg{
+	height: 35px; width:65%; 
+                line-height: 35px;
+                display: inline-block;
+                color:#1bd194;
+}
+.my-name{
+	height: 35px; width:30%;background-color:#ae90d4;
+                line-height: 35px;
+                text-align: right;
+                display: inline-block;
+                color:white; 
+}
+.my-msg{
+	height: 35px; width:65%; 
+                line-height: 35px;
+                display: inline-block;
+                color:#ae90d4;
+}
+.sys{
+	background-color: #bfc0c7;
+                    color:white; height: 35px; line-height: 35px; width:300px;
+}

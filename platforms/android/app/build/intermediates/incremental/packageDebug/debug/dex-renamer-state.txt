@@ -1,4 +1,4 @@
-#Sun Sep 16 13:07:17 KST 2018
+#Sat Sep 29 13:13:28 KST 2018
 base.0=C\:\\Users\\leejunghun\\cordovaproject\\femytalk\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 renamed.0=classes.dex
 file.0=C\:\\Users\\leejunghun\\cordovaproject\\femytalk\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex
