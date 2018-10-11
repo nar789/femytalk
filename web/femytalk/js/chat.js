@@ -68,20 +68,35 @@ function sendimg(url){
 
 function showmymsg(nick,msg,color){
 	var k=$("#chat").html();
+	var imgchat=false;
 	if(msg.indexOf("http")>=0){
-		msg="<img src=\""+msg+"\" style=\"width:30px;height:30px;\" onclick=\"showimg('"+msg+"')\">";
+		imgchat=true;
+		msg="<img src=\""+msg+"\" style=\"width:100px;height:100px;\" onclick=\"showimg('"+msg+"')\">";
 	}
-	var a="<div class='mt-1 msg'><div class='my-name' style='background-color:"+textcolor[color]+";'>"+nick+"&nbsp;\>\>&nbsp;</div><div class='ml-2 my-msg' style='color:"+textcolor[color]+";'>"+msg+"</div></div>";
+	var a="";
+	if(imgchat)
+	{
+		a="<div class='mt-1 msg' style='height:100px;'><div class='my-name' style='background-color:"+textcolor[color]+";'>"+nick+"&nbsp;\>\>&nbsp;</div><div class='ml-2 my-msg' style='color:"+textcolor[color]+";'>"+msg+"</div></div>";
+	}
+	else
+		a="<div class='mt-1 msg' style='height:35px;'><div class='my-name' style='background-color:"+textcolor[color]+";'>"+nick+"&nbsp;\>\>&nbsp;</div><div class='ml-2 my-msg' style='color:"+textcolor[color]+";'>"+msg+"</div></div>";
 	$("#chat").html(k+a);
 	movescroll();
 }
 
 function showyoumsg(nick,msg,color){
 	var k=$("#chat").html();
+	var imgchat=false;
 	if(msg.indexOf("http")>=0){
-		msg="<img src=\""+msg+"\" style=\"width:30px;height:30px;\" onclick=\"showimg('"+msg+"')\">";
+		imgchat=true;
+		msg="<img src=\""+msg+"\" style=\"width:100px;height:100px;\" onclick=\"showimg('"+msg+"')\">";
 	}
-	var a="<div class='mt-1 msg'><div class='you-name' style='color:"+textcolor[color]+";'>"+nick+"&nbsp;\>\>&nbsp;</div><div class='ml-2 you-msg' style='color:"+textcolor[color]+";'>"+msg+"</div></div>";
+	var a="";
+	if(imgchat)
+	{
+		a="<div class='mt-1 msg' style='height:100px;'><div class='you-name' style='color:"+textcolor[color]+";'>"+nick+"&nbsp;\>\>&nbsp;</div><div class='ml-2 you-msg' style='color:"+textcolor[color]+";'>"+msg+"</div></div>";
+	}else
+		a="<div class='mt-1 msg' style='height:35px;'><div class='you-name' style='color:"+textcolor[color]+";'>"+nick+"&nbsp;\>\>&nbsp;</div><div class='ml-2 you-msg' style='color:"+textcolor[color]+";'>"+msg+"</div></div>";
 	$("#chat").html(k+a);
 	movescroll();
 }

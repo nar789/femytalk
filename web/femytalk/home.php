@@ -26,7 +26,7 @@
                 echo "class='pl-3'>";
                 echo "<p style='background-color:skyblue;'>";
                 echo "<p style='font-weight: bold; margin:0px; padding:0px;font-size:16px;'>";
-                echo "[뉴비";
+                echo "[전체";
                 /*
                 if($row['type']==1){
                     echo "오붓한방";
@@ -43,7 +43,7 @@
                 echo "<p style='font-size: 12px; color:#b3b4bd;";
                 echo "padding:0px;";
                 echo "'>";
-                echo "[3/2] ";
+                echo "[1/2] ";
                 $r=json_decode($row['member']);
                 $result2=mysqli_query($conn,"select * from user where phone='".$r[0]->phone."'");
                 $row2=mysqli_fetch_array($result2);

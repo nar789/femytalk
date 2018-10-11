@@ -16,7 +16,7 @@ function menuclick(id){
 	}else if(id==3){
 		$("#ifr").attr("src","my.php?phone="+phone);
 	}else if(id==4){
-		$("#ifr").attr("src","pan.php");
+		$("#ifr").attr("src","board_list.php?p="+phone);
 	}else if(id==5){
 		$("#ifr").attr("src","mkroom.php?phone="+phone);
 	}
@@ -26,19 +26,23 @@ function menuclick(id){
 window.onload=init();
 
 function init(){
+	
+	if(back=="board_list"){
+		$("#ifr").attr("src","board_list.php?p="+p);
+	}
+	
 	window.addEventListener("message",getmsg,false);
 	var msg="{\"msg\":\"get-phone\"}";
 	window.parent.postMessage(msg,"*");
 	var ifr=document.getElementById("ifr");
 	var winh=$(window).height();
-	h=parseInt(winh)-181-30;
+	h=parseInt(winh)-181;
 	ifr.style.height=h+'px';
 }
 
 function start_update_loginstate(){
 	ls=setInterval(()=>{
 		$.get("updateloginstate.php?phone="+phone,function(d,e){ready_finish=true;
-			
 		});
 	},1000);
 }
@@ -49,7 +53,8 @@ function getmsg(e){
 	if(r.phone)
 	{
 		phone=r.phone;
-		$("#ifr").attr("src","home.php?phone="+phone);
+		if(!back)
+			$("#ifr").attr("src","home.php?phone="+phone);
 		start_update_loginstate();
 	}
 	if(r.msg=="img-view"){
@@ -76,5 +81,43 @@ function getmsg(e){
 	if(r.msg=="i-am-ban"){
 		window.parent.postMessage(e.data,"*");
 	}
+	if(r.msg=="board-insert-success"){
+		window.parent.postMessage(e.data,"*");
+	}
+	if(r.msg=="board-update-success"){
+		window.parent.postMessage(e.data,"*");
+	}
+	if(r.msg=="board-delete-success"){
+		window.parent.postMessage(e.data,"*");
+	}
+	if(r.msg=="comment-insert-success"){
+		window.parent.postMessage(e.data,"*");
+	}
+	if(r.msg=="comment-delete-success"){
+		window.parent.postMessage(e.data,"*");
+	}
+	if(r.msg=="go-board-detail"){
+		window.parent.postMessage(e.data,"*");
+	}
+	if(r.msg=="go-board-create"){
+		window.parent.postMessage(e.data,"*");
+	}
+	if(r.msg=="1lv-access"){
+		window.parent.postMessage(e.data,"*");
+	}
+	if(r.msg=="2lv-access"){
+		window.parent.postMessage(e.data,"*");
+	}
+	if(r.msg=="3lv-access"){
+		window.parent.postMessage(e.data,"*");
+	}
 
+}
+
+function buyheart(){
+	location.href="setting.php?go=buyheart.php";
+}
+
+function refresh(){
+	document.getElementById("ifr").contentDocument.location.reload(true);
 }

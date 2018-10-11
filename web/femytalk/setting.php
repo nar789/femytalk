@@ -10,14 +10,19 @@
         <title>femytalk</title>
     </head>
     <body style="background-color: white;">
+        <script type="text/javascript">
+            <?php
+                echo "var go=\"".$_GET['go']."\";";
+            ?>
+        </script>
         <div style="background-color: #F17171;
         height: 50px;line-height: 50px;
-        color:white;font-weight: bold; font-size:20px;" class="pl-3 pr-3"><div onclick="location.href='index.php'" style="display: inline-block;margin:0px;">페미톡</div><img src='img/setup.png' style="
+        color:white;font-weight: bold; font-size:20px;" class="pl-3 pr-3"><div onclick="location.href='index.php'" style="display: inline-block;margin:0px;"><img src='img/logo.png' style="height: 20px;"></div><img src='img/setup.png' style="
         width:30px;float:right;margin-top:10px;"></div>
         <div style="background-color: #F59593; width:100%; height:1px;"></div>
         <div style="height: 90px; background-color: #f17171;padding-top:10px;">
             <center>
-                <div class="nav-btn mr-3" style="display: inline-block;" onclick="menuclick(1)">
+                <div class="nav-btn mr-4" style="display: inline-block;" onclick="menuclick(1)">
                     <div class="circle" style="width:50px;height:50px;background-color: #F59593; border-radius:50px;padding-top:8px;">
                         <center>
                             <img src='img/setmenu_on_01.png' style="width: 30px;" id=i1> 
@@ -25,7 +30,7 @@
                     </div>
                     <p style="color:white;font-size:12px;">공지</p>
                 </div>
-                <div class="nav-btn mr-3" style="display: inline-block;" onclick="menuclick(2)">
+                <div class="nav-btn mr-4" style="display: inline-block;" onclick="menuclick(2)">
                     <div class="circle" style="width:50px;height:50px;background-color: #F59593; border-radius:50px;padding-top:8px;">
                         <center>
                             <img src='img/setmenu_off_02.png' style="width: 30px;" id=i2>
@@ -33,7 +38,7 @@
                     </div>
                     <p style="color:white;font-size:12px;">하트구매</p>
                 </div>
-                <div class="nav-btn mr-3" style="display: inline-block;" onclick="menuclick(3)">
+                <div class="nav-btn mr-4" style="display: inline-block;" onclick="menuclick(3)">
                     <div class="circle" style="width:50px;height:50px;background-color: #F59593; border-radius:50px;padding-top:8px;">
                         <center>
                             <img src='img/setmenu_off_03.png' style="width: 30px;" id=i3>

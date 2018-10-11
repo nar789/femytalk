@@ -18,7 +18,7 @@
             float:right;color: white;font-size: 12px;" >개</p>
             <p style="color:#f05c54;font-size: 14px;display: inline-block;float:right;"
             class="mr-1"
-            >1</p>
+            >0</p>
         </div>
 
         <div class="container pt-1" >
@@ -60,7 +60,7 @@
                 " class="pl-3 pr-3 mt-2" onclick="buy()">
 
                     <div style="float:left;width: 60%;height: 60px; line-height: 60px;">
-                        <div style="font-size: 15px;font-weight: bold;">뉴비 구매권</div>
+                        <div style="font-size: 15px;font-weight: bold;">1Lv 구매권</div>
                     </div>
 
                     <div style="float:right;color:#f07171;height: 60px; line-height: 60px;width: 40%;
@@ -71,7 +71,7 @@
                 " class="pl-3 pr-3 mt-2" onclick="buy()">
 
                     <div style="float:left;width: 60%;height: 60px; line-height: 60px;">
-                        <div style="font-size: 15px;font-weight: bold;">사람 구매권</div>
+                        <div style="font-size: 15px;font-weight: bold;">2Lv 구매권</div>
                     </div>
 
                     <div style="float:right;color:#f07171;height: 60px; line-height: 60px;width: 40%;
@@ -82,7 +82,7 @@
                 " class="pl-3 pr-3 mt-2" onclick="buy()">
 
                     <div style="float:left;width: 60%;height: 60px; line-height: 60px;">
-                        <div style="font-size: 15px;font-weight: bold;">전사 구매권</div>
+                        <div style="font-size: 15px;font-weight: bold;">3Lv 구매권</div>
                     </div>
 
                     <div style="float:right;color:#f07171;height: 60px; line-height: 60px;width: 40%;

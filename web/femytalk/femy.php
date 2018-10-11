@@ -16,8 +16,8 @@
 			    echo "error";
 			}
 			//$result=mysqli_query($conn,"select * from user");
-			$result=mysqli_query($conn,"select * from user where time_to_sec(timediff(now(),loginstate))<3 order by loginstate desc");
-			//$result=mysqli_query($conn,"select * from user order by loginstate desc");
+			//$result=mysqli_query($conn,"select * from user where time_to_sec(timediff(now(),loginstate))<3 order by loginstate desc");
+			$result=mysqli_query($conn,"select * from user order by loginstate desc");
 			if(mysqli_num_rows($result)==0){
 				echo "<center><p class='mt-5' style='color:gray;'>접속중인 페미가 없습니다.</p></center>";
 			}
@@ -40,7 +40,7 @@
 				echo "</div>";
 				echo "<div style='display: inline-block; height: 50px; vertical-align: top;";
 				echo "float:right;'>";
-				echo "<div style='width: 50px; height: 50px; display: inline-block;";
+				echo "<div onclick='talk11()' style='width: 50px; height: 50px; display: inline-block;";
 				echo "border:1px solid #f59593; font-weight: bold;'";
 				echo "class='mr-2'><center style='color:#f59593;'>대 화<br>하 기<center></div>";
 				echo "<div style='width: 50px; height: 50px; display: inline-block;";

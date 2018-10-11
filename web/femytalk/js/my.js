@@ -4,6 +4,11 @@ function imgclick(img) {
 	window.parent.postMessage(msg,"*");
 }
 
+function talk11(){
+	var msg="{\"msg\":\"2lv-access\"}";
+	window.parent.postMessage(msg,"*");
+}
+
 
 function delfriend(p,f){
 	$.get("addfriend.php?p="+p,function(d,e){

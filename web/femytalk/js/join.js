@@ -10,10 +10,14 @@ window.addEventListener("message",getmsg,false);
 window.onload=init();
 
 function init(){
+
+	load_city_name();
+
 	if(p){
 		$.get("getuser.php?p="+p,function(d,e){
 			var u=JSON.parse(d);
-			
+			$("#namecheck-btn").css("display","none");
+			$("#level").css("display","block");
 			$("#photo").css("display","none");
 			$("#plus").css("display","none");
 			$("#photo2").css("display","block");
@@ -26,6 +30,7 @@ function init(){
 			$("#age").val(u.age);
 			var region=u.region.split(" ");
 			$("#region1").val(region[0]);
+			change_detail_city();
 			$("#region2").val(region[1]);
 			$("#upto").val(u.upto);
 			check=1;
@@ -85,9 +90,10 @@ function save(){
 	var upto=$("#upto").val();
 	var url=$("#photo2").attr("src");
 	if(url==""){
-		var msg="{\"msg\":\"photo-none\"}";
-		window.parent.postMessage(msg,"*");
-		return false;	
+		//var msg="{\"msg\":\"photo-none\"}";
+		//window.parent.postMessage(msg,"*");
+		//return false;	
+		url="http://kirino16.cafe24.com/img/unknown_thumbnail.png";
 	}
 	if(p)
 	{

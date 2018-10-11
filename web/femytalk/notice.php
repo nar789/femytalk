@@ -26,7 +26,7 @@
             display: none;
             border-bottom: 1px solid #d1d1d1;"
             >
-                <textarea style="border:0px;font-size: 12px;width: 100%;height: 100%;margin:0px;text-align: center;">
+                <textarea style="border:0px;font-size: 12px;width: 100%;height: 100%;margin:0px;text-align: center;" disabled="disabled">
 ---------해당 이벤트는 조기 종료되었습니다.---------
 매년 2월이면 어김없이 찾아오는 발렌타인 데이.
 다들 어떻게 맞이하고 계시나요?
@@ -48,7 +48,7 @@
             display: none;
             border-bottom: 1px solid #d1d1d1;"
             >
-                <textarea style="border:0px;font-size: 12px;width: 100%;height: 100%;margin:0px;text-align: center;">
+                <textarea style="border:0px;font-size: 12px;width: 100%;height: 100%;margin:0px;text-align: center;" disabled="disabled">
 ---------해당 이벤트는 조기 종료되었습니다.---------
 매년 2월이면 어김없이 찾아오는 발렌타인 데이.
 다들 어떻게 맞이하고 계시나요?
@@ -70,7 +70,7 @@
             display: none;
             border-bottom: 1px solid #d1d1d1;"
             >
-                <textarea style="border:0px;font-size: 12px;width: 100%;height: 100%;margin:0px;text-align: center;">
+                <textarea style="border:0px;font-size: 12px;width: 100%;height: 100%;margin:0px;text-align: center;" disabled="disabled">
 ---------해당 이벤트는 조기 종료되었습니다.---------
 매년 2월이면 어김없이 찾아오는 발렌타인 데이.
 다들 어떻게 맞이하고 계시나요?
@@ -92,7 +92,7 @@
             display: none;
             border-bottom: 1px solid #d1d1d1;"
             >
-                <textarea style="border:0px;font-size: 12px;width: 100%;height: 100%;margin:0px;text-align: center;">
+                <textarea style="border:0px;font-size: 12px;width: 100%;height: 100%;margin:0px;text-align: center;" disabled="disabled">
 ---------해당 이벤트는 조기 종료되었습니다.---------
 매년 2월이면 어김없이 찾아오는 발렌타인 데이.
 다들 어떻게 맞이하고 계시나요?

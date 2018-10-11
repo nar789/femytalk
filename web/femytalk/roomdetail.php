@@ -86,7 +86,7 @@
                 >[방장] 매너남/남/25/검색</div></center>//-->
 
     		<center class="mt-3">
-    			<div style="height: 30px; background-color: #f07171; 
+    			<div style="background-color: #f07171; 
     			height: 50px;
     			line-height: 50px;
     			color:white;

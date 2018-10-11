@@ -167,12 +167,42 @@ function getmsg(e){
     else if(r.msg=="buy-complete"){
         halert("결제가 완료되었습니다.");
     }
+    else if(r.msg=="board-insert-success"){
+        halert("게시글 작성이 완료되었습니다.");
+    }
+    else if(r.msg=="board-update-success"){
+        halert("게시글 수정이 완료되었습니다.");
+    }
+    else if(r.msg=="board-delete-success"){
+        halert("게시글 삭제가 완료되었습니다.");
+    }
+    else if(r.msg=="comment-insert-success"){
+        halert("댓글 작성이 완료되었습니다.");
+    }
+    else if(r.msg=="comment-delete-success"){
+        halert("댓글 삭제가 완료되었습니다.");
+    }
+    else if(r.msg=="1lv-access"){
+        halert("1Lv 이상부터 접근이 가능합니다.");
+    }
+    else if(r.msg=="2lv-access"){
+        halert("2Lv 이상부터 접근이 가능합니다.");
+    }
+    else if(r.msg=="3lv-access"){
+        halert("3Lv 이상부터 접근이 가능합니다.");
+    }
     else if(r.msg=="create-chat-success"){
         halert("방만들기가 완료되었습니다.");
         $("#ifr").attr("src","http://kirino16.cafe24.com/chat.php?id="+r.id+"&p="+my);
     }
     else if(r.msg=="go-chat"){
         $("#ifr").attr("src","http://kirino16.cafe24.com/chat.php?id="+r.id+"&p="+my);
+    }
+    else if(r.msg=="go-board-detail"){
+        $("#ifr").attr("src","http://kirino16.cafe24.com/board_detail.php?id="+r.id+"&p="+my);
+    }
+    else if(r.msg=="go-board-create"){
+        $("#ifr").attr("src","http://kirino16.cafe24.com/board_detail.php?p="+my);
     }
     else if(r.msg=="get-phone"){
         var msg="{\"phone\":\""+my+"\"}";
@@ -182,7 +212,7 @@ function getmsg(e){
         $("#ifr").attr("src","http://kirino16.cafe24.com/index.php");   
     }
     else if(r.msg=="img-view"){
-        PhotoViewer.show(r.url, 'Image');
+        PhotoViewer.show(r.url, '');
     }
 }
 
@@ -200,11 +230,35 @@ function getnumber(){
 	});
 }
 
+function onBackKeyDown() {
+    // Handle the back button
+    var src=$("#ifr").attr("src");
+    if(src.indexOf("chat.php")>=0){
+        if($("#chat").css("display")=="none")
+            $("#chatbtn").click();
+    }   
+    else if($("#exit").css("display")=="none")
+    {
+        $("#exitbtn").click();
+    }
+}
+
+function chatexit(){
+
+    $("#chat").modal('hide');
+    $("#ifr").attr("src","http://kirino16.cafe24.com/index.php");
+}
+
+function appexit(){
+    navigator.app.exitApp();
+}
+
 
 var app = {
     // Application ConstructorW
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+        document.addEventListener('backbutton', onBackKeyDown, false);
     },
 
     onDeviceReady: function() {
@@ -222,6 +276,7 @@ var app = {
 	        takePicture(Camera.PictureSourceType.PHOTOLIBRARY);
 	    });
     }
+
 };
 
 app.initialize();

@@ -7,6 +7,9 @@ function selrt(r){
 }
 
 function mkroom(){
+	var msg="{\"msg\":\"1lv-access\"}";
+	window.parent.postMessage(msg,"*");
+	return;
 	var rt=$("#rt").val();
 	var name=$("#rname").val();
 	$.post("createchat.php",{

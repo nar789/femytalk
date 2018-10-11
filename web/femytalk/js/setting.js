@@ -27,7 +27,7 @@ function menuclick(id){
 	}else if(id==2){
 		$("#ifr").attr("src","buyheart.php");
 	}else if(id==3){
-		location.href="join2.php?p="+phone;
+		location.href="join4.php?p="+phone;
 	}
 }
 
@@ -42,6 +42,8 @@ function init(){
 	var winh=$(window).height();
 	h=parseInt(winh)-181-30;
 	ifr.style.height=h+'px';
+
+	
 }
 
 function start_update_loginstate(){
@@ -58,7 +60,11 @@ function getmsg(e){
 	if(r.phone)
 	{
 		phone=r.phone;
-		$("#ifr").attr("src","notice.php");
+		if(go){
+			$("#ifr").attr("src",go);
+			go="";
+		}else
+			$("#ifr").attr("src","notice.php");
 		start_update_loginstate();
 	}
 	if(r.msg=="img-view"){

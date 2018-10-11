@@ -12,6 +12,6 @@
 
 	$result=mysqli_query($conn,"select * from user where phone='$p'");
 	$row=mysqli_fetch_array($result);
-	echo "{\"name\":\"".$row['name']."\",\"sex\":\"".$row['sex']."\",\"age\":\"".$row['age']."\",\"region\":\"".$row['region']."\",\"upto\":\"".$row['upto']."\",\"img\":\"".$row['img']."\"}";
+	echo "{\"name\":\"".$row['name']."\",\"sex\":\"".$row['sex']."\",\"age\":\"".$row['age']."\",\"region\":\"".$row['region']."\",\"upto\":\"".$row['upto']."\",\"img\":\"".$row['img']."\",\"phone\":\"".$row['phone']."\"}";
 	//while($row=mysqli_fetch_array($result)){}
 ?>

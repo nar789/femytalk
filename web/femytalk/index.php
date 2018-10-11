@@ -9,10 +9,17 @@
 
         <title>femytalk</title>
     </head>
+
     <body style="background-color: white;">
+        <script type="text/javascript">
+            <?php
+                echo "var back=\"".$_GET['back']."\";";
+                echo "var p=\"".$_GET['p']."\";";
+            ?>
+        </script>
         <div style="background-color: #F17171;
         height: 50px;line-height: 50px;
-        color:white;font-weight: bold; font-size:20px;" class="pl-3 pr-3">페미톡<img src='img/setup.png' style="
+        color:white;font-weight: bold; font-size:20px;" class="pl-3 pr-3"><img src='img/logo.png' style="height: 20px;"><img src='img/setup.png' style="
         width:30px;float:right;margin-top:10px;" onclick="javascript:location.href='setting.php';"></div>
         <div style="background-color: #F59593; width:100%; height:1px;"></div>
         <div style="height: 90px; background-color: #f17171;margin:0px;">
@@ -82,10 +89,10 @@
             </div><div style="height:40px;width:45%;margin:0px;padding:0px; border-top: 1px solid #d1d1d1;
         border-bottom: 1px solid #d1d1d1; border-right:1px solid #d1d1d1; line-height: 40px;
         font-size: 12px;
-        display: inline-block;background-color:#f5f5f5">
+        display: inline-block;background-color:#f5f5f5" onclick="buyheart()">
             <img src='img/btn_charge.png' style="height:25px;" class="ml-3 mr-1">
             충전
-        </div><div style="
+        </div><div onclick="refresh()" style="
         height:40px;width:10%;margin:0px;padding:0px; line-height: 40px; border-top: 1px solid #d1d1d1;
         font-size: 12px;
         border-bottom: 1px solid #d1d1d1; 
