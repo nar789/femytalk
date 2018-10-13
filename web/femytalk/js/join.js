@@ -26,7 +26,7 @@ function init(){
 			$("#name").val(u.name);
 			$("#sex").attr("disabled","disabled");
 			$("#sex").val(u.sex);
-
+			$("#level-val").html(u.level+" Lv");
 			$("#age").val(u.age);
 			var region=u.region.split(" ");
 			$("#region1").val(region[0]);

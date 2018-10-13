@@ -10,6 +10,11 @@
         <title>femytalk</title>
     </head>
     <body style="background-color: white;">
+        <script type="text/javascript">
+            <?php
+                echo "var p=\"".$_GET['p']."\";";
+            ?>
+        </script>
         <div style="background-color: black; height: 40px; width: 100%;color: white;
         line-height: 40px;"
         class="pl-3 pr-3">
@@ -17,8 +22,8 @@
             <p style="display: inline-block; 
             float:right;color: white;font-size: 12px;" >개</p>
             <p style="color:#f05c54;font-size: 14px;display: inline-block;float:right;"
-            class="mr-1"
-            >0</p>
+            class="mr-1" id=heart-cnt
+            >?</p>
         </div>
 
         <div class="container pt-1" >

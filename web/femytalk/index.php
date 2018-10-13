@@ -85,7 +85,7 @@
         border-bottom: 1px solid #d1d1d1; border-right:1px solid #d1d1d1;
         display: inline-block;background-color:#f5f5f5; line-height: 40px; font-size: 12px;">
             <img src='img/btn_bubble.png' style="height:25px;" class="ml-3 mr-1">
-            0
+            <div style="display: inline-block;" id=heart-cnt>?</div>
             </div><div style="height:40px;width:45%;margin:0px;padding:0px; border-top: 1px solid #d1d1d1;
         border-bottom: 1px solid #d1d1d1; border-right:1px solid #d1d1d1; line-height: 40px;
         font-size: 12px;

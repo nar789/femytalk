@@ -16,6 +16,10 @@ function loaddata(){
 			color[r[i].phone]=r[i].color;
 		}
 	});
+	$.get("showchatmember.php?id="+id,function(d,e){
+		$("#showchatmember").html("");
+		$("#showchatmember").html(d);
+	});	
 }
 
 function back(){
@@ -28,24 +32,47 @@ function comparedata(){
 		c=JSON.parse(d);
 		if(c[0].phone==p)amiking=true;
 		else amiking=false;
+		var outlist=[];
 		for(var i=0;i<c.length;i++){
 			if(c[i].phone==p)continue;
-			var enter_check=cnt[c[i].phone]===undefined;
-			if(enter_check){
-				$.get("getmsg.php?p="+c[i].phone,function(d,e){
-					var data=JSON.parse(d);
-					showenter(data.name);
-				});
-				loaddata();
-			}
-			else if(cnt[c[i].phone]!=c[i].cnt)
-			{
-				cnt[c[i].phone]=c[i].cnt;
-				getmsg(c[i].phone);
-			}
-		}
+			$.get("checkchatstate.php?id="+id+"&p="+c[i].phone+"&idx="+i,function(d,e){
+				var r=JSON.parse(d);
+				if(r.ret=="success"){
+
+					var enter_check=cnt[r.p]===undefined;
+					if(enter_check){
+						$.get("getmsg.php?p="+r.p,function(d,e){
+							var data=JSON.parse(d);
+							showenter(data.name);
+						});
+						loaddata();
+					}
+					else if(cnt[r.p]!=c[r.idx].cnt)
+					{
+						cnt[r.p]=c[r.idx].cnt;
+						getmsg(r.p);
+					}		
+
+				}else{
+					$.get("getmsg.php?p="+r.p,function(d,e){
+						var data=JSON.parse(d);
+						showexit(data.name);
+					});
+					//outlist.push(r.idx);
+					c.splice(r.idx,1);
+					var cstr=JSON.stringify(c);
+					$.get("addmember.php?id="+id+"&member="+cstr,function(d,e){ loaddata(); });
+				}
+			});
+		}//for
+
+		
+
+		//getoutmemeber.php //아웃멤버 정보추고 새로 db업데이트 아웃표시 후에 loaddata
 	});	
 }
+
+//loaddata할때마다 멤버표시 바뀌기
 
 
 function sendmsg(){
@@ -122,6 +149,13 @@ function showenter(nick){
 	movescroll();
 }
 
+function showexit(nick){
+	var k=$("#chat").html();
+	var a="<div><center><div class='mt-3 mb-3 sys'>"+nick+" 님이 퇴장하셨습니다.</div></center></div>";
+	$("#chat").html(k+a);
+	movescroll();
+}
+
 function listenmsg(e){
 
 	var r=JSON.parse(e.data);
@@ -155,8 +189,65 @@ function checkban(){
 				return;
 			}
 		}
-		init();
+		//init();
+		presetting();
 	});
+}
+
+function chatstate_update(){
+	$.get("updatechatstate.php?id="+id+"&p="+p,function(d,e){
+
+	});
+}
+
+
+function enter(id,p)
+{
+	$.get("getban.php?id="+id,function(d,e){
+		var r=JSON.parse(d);
+		for(var i=0;i<r.length;i++){
+			if(r[i]==p){
+				var msg="{\"msg\":\"i-am-ban\"}";
+				window.parent.postMessage(msg,"*");
+				return;
+			}
+		}
+
+	$.get("updatechatstate.php?id="+id+"&p="+p,function(d,e){
+		$.get("getmember.php?id="+id,
+				function(d,e){
+					var j=JSON.parse(d);
+					var members={};
+					for(var i=0;i<j.length;i++)
+					{
+						members[j[i].phone]=j[i].cnt;
+					}
+					var enter_check=members[p]===undefined;
+					if(enter_check){
+						a={};
+						a.phone=p;
+						a.cnt=0;
+						a.color=Math.floor(Math.random() * 10) + 1;
+						j.push(a);
+						var member=JSON.stringify(j);
+
+						$.get("addmember.php?id="+id+"&member="+member,
+							function(d,e){ 
+								init();
+
+							});
+					}else{
+						init();
+					}
+				});
+
+		});
+	});
+}
+
+function presetting()
+{
+	enter(id,p);
 }
 
 
@@ -164,6 +255,7 @@ function init(){
 
 	loaddata();
 	setInterval(()=>{comparedata();},1000);
+	setInterval(()=>{chatstate_update();},1000);
 	showenter(mynick);
 
 	$("#msg").keyup(function(e){

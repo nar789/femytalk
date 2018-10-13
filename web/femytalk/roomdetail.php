@@ -40,7 +40,23 @@
     		color:#9ea1a3;
     		line-height: 40px;
     		font-size: 12px;
-    		display: inline-block;"><?php echo $row['name']; ?></div>
+    		display: inline-block;"><?php 
+                if($row['type']==4)
+                {
+                    $r=json_decode($row['name']);
+                    if($r->p1==$_GET['phone'])
+                    {
+                        $result3=mysqli_query($conn,"select * from user where phone='".$r->p2."'");
+                        $row3=mysqli_fetch_array($result3);
+                        echo $row3['name']."님과의 1:1대화";
+                    }else{
+                        $result3=mysqli_query($conn,"select * from user where phone='".$r->p1."'");
+                        $row3=mysqli_fetch_array($result3);
+                        echo $row3['name']."님과의 1:1대화";
+                    }
+                }else
+                    echo $row['name'];
+            ?></div>
 
              <?php
                 $r=json_decode($row['member']);

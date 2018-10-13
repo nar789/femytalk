@@ -17,17 +17,6 @@
         ?>
         </script>
 
-        <?php
-            include ("dblib.php");
-            $conn=mysqli_connect($db_host,$db_user,$db_passwd,$db_name);
-            if (!$conn) {
-                echo "error";
-            }
-            $id=$_GET['id'];
-            $result=mysqli_query($conn,"select * from chat where id=$id");
-            $row=mysqli_fetch_array($result);
-        ?>
-
 
         <div style="background-color: rgba(0,0,0,0.5); width: 100%; height: 100%; overflow: scroll;
         display: none;
@@ -50,36 +39,8 @@
 
                 
 
-
-            <?php
-
-                $r=json_decode($row['member']);
-
-                for($i=0;$i<count($r);$i++){
-                    
-                    $result2=mysqli_query($conn,"select * from user where phone='".$r[$i]->phone."'");
-                    $row2=mysqli_fetch_array($result2);          
-
-                    echo "<center id='person".$i."'><div ";
-                    echo "class='mt-3 pl-3'  style='width:92%;";
-                    echo "text-align: left;";
-                    echo "height: 30px;";
-                    echo "border-bottom: 1px solid black;";
-                    echo "font-size: 13px; color:white;'";
-                    echo ">";
-                    echo "<div style='width:20px;height:20px; border:1px solid black; ";
-                    echo "display:inline-block;";
-                    echo "text-align:center;line-height:20px;";
-                    echo "background-color:white;";
-                    echo "' class='mr-2' onclick='checkbox_click(\"".$r[$i]->phone."\",".$i.",".count($r).")'>";
-                    echo "<img src='img/chat_check.png' style='visibility:hidden;width:15px;height:15px;' id='check".$i."'>";
-                    echo "</div>";
-                    if($i==0)
-                        echo "[방장] ";
-                    echo $row2['name']."/".$row2['sex']."/".$row2['age']."/".$row2['upto'];
-                    echo "</div></center>";
-                }
-            ?>
+                <div id=showchatmember>
+                </div>
 
 
 
@@ -115,9 +76,26 @@
                 if (!$conn) {
                     echo "error";
                 }
-                $result=mysqli_query($conn,"select name from chat where id=$id");
+                $result=mysqli_query($conn,"select * from chat where id=$id");
                 $row=mysqli_fetch_array($result);
-                echo $row[0];
+
+                if($row['type']==4)
+                {
+                    $r=json_decode($row['name']);
+                    if($r->p1==$_GET['p'])
+                    {
+                        $result3=mysqli_query($conn,"select * from user where phone='".$r->p2."'");
+                        $row3=mysqli_fetch_array($result3);
+                        echo $row3['name']."님과의 1:1대화";
+                    }else{
+                        $result3=mysqli_query($conn,"select * from user where phone='".$r->p1."'");
+                        $row3=mysqli_fetch_array($result3);
+                        echo $row3['name']."님과의 1:1대화";
+                    }
+                }else
+                    echo $row['name'];
+
+                
                 echo "<script>";
                 $result=mysqli_query($conn,"select name from user where phone='$p'");
                 $row=mysqli_fetch_array($result);
@@ -157,8 +135,10 @@
         </div>
 
         <div id=msg-g style="height:50px;position: absolute; bottom:0px; border-top:1px solid #ededed;
+        background-color: white;
         width:100%;">
             <div style="width: 30px; height: 30px; border:2px solid #bfc0c7; text-align: center; display: inline-block;
+            background-color: white;
             border-radius: 10px;" class="ml-3" onclick="imgclick()">
                 <img src='img/chatting_plus.png' style="width: 10px; height: 10px;">
             </div>

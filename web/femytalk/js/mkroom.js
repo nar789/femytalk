@@ -7,18 +7,31 @@ function selrt(r){
 }
 
 function mkroom(){
-	var msg="{\"msg\":\"1lv-access\"}";
-	window.parent.postMessage(msg,"*");
-	return;
-	var rt=$("#rt").val();
-	var name=$("#rname").val();
-	$.post("createchat.php",{
-		name:name,
-		type:rt,
-		p:p
-	},(d,e)=>{ 
+	
+	$.get("getuser.php?p="+p,function(d,e){
+		var r=JSON.parse(d);
+		if(r.level<1){
+			var msg="{\"msg\":\"1lv-access\"}";
+			window.parent.postMessage(msg,"*");
+			return;			
+		}else{
+			var rt=$("#rt").val();
+			var name=$("#rname").val();
+			if(name=="")return;
+			var all=$("#all").is(":checked");
+			if(all)all=1;
+			else all=0;
+			$.post("createchat.php",{
+				name:name,
+				type:rt,
+				p:p,
+				all:all
+			},(d,e)=>{ 
 
-		var msg="{\"msg\":\"create-chat-success\",\"id\":"+d+"}";
-		window.parent.postMessage(msg,"*");
-	 });
+				var msg="{\"msg\":\"create-chat-success\",\"id\":"+d+"}";
+				window.parent.postMessage(msg,"*");
+			 });
+		}
+	});
+
 }

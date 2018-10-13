@@ -7,8 +7,8 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
+    "com-sarriaroman-photoviewer": {
+      "PACKAGE_NAME": "com.femytalk.app"
     },
     "cordova-plugin-camera": {
       "PACKAGE_NAME": "com.femytalk.app"
@@ -19,10 +19,13 @@
     "cordova-plugin-sim": {
       "PACKAGE_NAME": "com.femytalk.app"
     },
-    "com-sarriaroman-photoviewer": {
+    "cordova-plugin-statusbar": {
       "PACKAGE_NAME": "com.femytalk.app"
     },
-    "cordova-plugin-statusbar": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.femytalk.app"
+    },
+    "cordova-plugin-fcm": {
       "PACKAGE_NAME": "com.femytalk.app"
     }
   },

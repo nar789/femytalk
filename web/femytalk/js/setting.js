@@ -8,10 +8,20 @@ function menuclick(id){
 
 	if(id==4){
 		if(!push){
+			$.post("setonoff.php",{
+				p:phone,
+				onoff:1
+			},function(d,e){});
 			$("#i4").attr("src","img/setmenu_on_04.png");		
+			$("#push-text").html("푸쉬 ON");
 			push=true;
 		}else{
+			$.post("setonoff.php",{
+				p:phone,
+				onoff:0
+			},function(d,e){});
 			$("#i4").attr("src","img/setmenu_off_04.png");		
+			$("#push-text").html("푸쉬 OFF");
 			push=false;
 		}
 		return;
@@ -25,10 +35,26 @@ function menuclick(id){
 	if(id==1){
 		$("#ifr").attr("src","notice.php");
 	}else if(id==2){
-		$("#ifr").attr("src","buyheart.php");
+		$("#ifr").attr("src","buyheart.php?p="+phone);
 	}else if(id==3){
-		location.href="join4.php?p="+phone;
+		location.href="join5.php?p="+phone;
 	}
+}
+
+function getpush()
+{
+	$.get("getuser.php?p="+phone,function(d,e){
+		var r=JSON.parse(d);
+		if(r.onoff==1){
+			$("#i4").attr("src","img/setmenu_on_04.png");		
+			$("#push-text").html("푸쉬 ON");
+			push=true;
+		}else{
+			$("#i4").attr("src","img/setmenu_off_04.png");		
+			$("#push-text").html("푸쉬 OFF");
+			push=false;	
+		}
+	});
 }
 
 
@@ -48,7 +74,10 @@ function init(){
 
 function start_update_loginstate(){
 	ls=setInterval(()=>{
-		$.get("updateloginstate.php?phone="+phone,function(d,e){ready_finish=true;
+		$.get("updateloginstate.php?phone="+phone,function(d,e){
+			if(!ready_finish)
+				getpush();
+			ready_finish=true;
 			
 		});
 	},1000);

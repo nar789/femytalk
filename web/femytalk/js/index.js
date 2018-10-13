@@ -1,6 +1,8 @@
 var phone = null;
 var ls=null;
 var ready_finish=false;
+var chatid=null;
+var token=null;
 
 function menuclick(id){
 	if(!ready_finish)return false;
@@ -38,24 +40,92 @@ function init(){
 	var winh=$(window).height();
 	h=parseInt(winh)-181;
 	ifr.style.height=h+'px';
+	
 }
+
+function getheartcnt(){
+	$.get("getuser.php?p="+phone,function(d,e){
+		var r=JSON.parse(d);
+		$("#heart-cnt").html(r.heart);
+	});
+}
+
 
 function start_update_loginstate(){
 	ls=setInterval(()=>{
 		$.get("updateloginstate.php?phone="+phone,function(d,e){ready_finish=true;
+			getheartcnt();
+			gettoken();
 		});
 	},1000);
+}
+
+function getpush(){
+
+	$.get("getuser.php?p="+phone,function(d,e){
+		var r=JSON.parse(d);
+
+		if(r.push!="" && r.push!="off"){
+			chatid=parseInt(r.push);
+			clearpush();
+			$.get("existchatroom.php?id="+chatid,function(d,e){
+				if(d=="exist")
+				{
+					
+					$.get("getmember.php?id="+chatid,function(d,e){
+						
+						var j2=JSON.parse(d);
+						var name=j2[0].phone;
+						var msg="{\"msg\":\"invite-chat\",\"id\":"+chatid+",\"name\":\""+name+"\"}";
+						window.parent.postMessage(msg,"*");
+					});
+					
+				}
+			});
+		}
+	});
+}
+
+function clearpush(){
+	$.post("setpush.php",{
+		p:phone,
+		push:""
+	},function(d,e){});
+}
+
+function gettoken(){
+	var msg="{\"msg\":\"get-token\"}";
+	window.parent.postMessage(msg,"*");
+}
+
+function settoken(){
+	if(phone!=null && token!=null)
+	{
+		$.post("settoken.php",{
+			p:phone,
+			token:token
+		},function(d,e){
+			
+		});
+	} 
+
 }
 
 
 function getmsg(e){
 	var r=JSON.parse(e.data);
-	if(r.phone)
+	if(r.token)
+	{
+		token=r.token;
+		settoken();
+	}
+	else if(r.phone)
 	{
 		phone=r.phone;
 		if(!back)
 			$("#ifr").attr("src","home.php?phone="+phone);
 		start_update_loginstate();
+		setInterval(()=>{getpush();},1000);
 	}
 	if(r.msg=="img-view"){
 		window.parent.postMessage(e.data,"*");

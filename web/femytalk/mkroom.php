@@ -40,7 +40,22 @@
     			type=text class="mt-3 pl-3"  style="width:100%;
     			height: 40px;
     			font-size: 13px; color:gray;"
-    			placeholder="방 제목을 입력해 주세요."></center><center class="mt-3" style="width:100%;overflow-x:hidden;"><div style="
+    			placeholder="방 제목을 입력해 주세요."></center>
+            <?php
+                include ("dblib.php");
+                $conn=mysqli_connect($db_host,$db_user,$db_passwd,$db_name);
+                if (!$conn) {
+                    echo "error";
+                }
+                $result=mysqli_query($conn,"select * from user where phone='".$_GET['phone']."'");
+                $row=mysqli_fetch_array($result);
+                if($row['level']>=3){
+            ?>
+                <center class="mt-3"><input type=checkbox id=all> <div style="display: inline-block;color:white">전체방을 만드시겠습니까?</div></center>
+            <?php
+                }
+            ?>
+            <center class="mt-3" style="width:100%;overflow-x:hidden;"><div style="
                 background-color: #f07171; 
     			height: 50px;
     			line-height: 50px;

@@ -17,33 +17,100 @@
             }
 
             $result=mysqli_query($conn,"select * from chat order by id desc");
+            if(mysqli_num_rows($result)==0){
+        ?>
+            <center><p style='color:gray;' class="pt-5">존재하는 채팅방이 없습니다.</p></center>
+        <?php
+            }
             while($row=mysqli_fetch_array($result))
             {
+                if($row['type']==4)
+                {
+                    $r=json_decode($row['name']);
+                    if($r->p1!=$_GET['phone'] && $r->p2!=$_GET['phone'])
+                        continue;
+                }
+
+                $r=json_decode($row['member']);
+                $cur=0;
+                for($i=0;$i<count($r);$i++)
+                {
+                    $result4=mysqli_query($conn,"select * from user where chatid=".$row['id']." and phone='".$r[$i]->phone."' and time_to_sec(timediff(now(),chatstate))<3");    
+                    $cnt=mysqli_num_rows($result4);
+                    if($cnt>0)
+                        $cur=$cur+1;
+                }
+                if($cur==0)
+                {
+                    mysqli_query($conn,"delete from chat where id=".$row['id']);
+                    continue;
+                }
+
+                if($row['type']==1 || $row['type']==4)
+                    $max=2;
+                else if($row['type']==2)
+                    $max=10;
+                else if($row['type']==3)
+                    $max=20;
+
+
                 echo "<div ";
-                echo "onclick='enter(".$row['id'].")'";
+                if($max>$cur){
+                    if($row['allroom']==1)
+                    {
+                        echo "onclick='enter(".$row['id'].",0)'";    
+                    }else{
+                        $r=json_decode($row['member']);
+                        $result2=mysqli_query($conn,"select * from user where phone='".$r[0]->phone."'");
+                        $row2=mysqli_fetch_array($result2);
+                        echo "onclick='enter(".$row['id'].",".$row2['level'].")'";
+                    }
+                }
                 echo "style='height: 60px; border-bottom:1px solid #d1d1d1; ";
                 echo "'";
                 echo "class='pl-3'>";
                 echo "<p style='background-color:skyblue;'>";
                 echo "<p style='font-weight: bold; margin:0px; padding:0px;font-size:16px;'>";
-                echo "[전체";
-                /*
-                if($row['type']==1){
-                    echo "오붓한방";
+                if($row['type']!=4)
+                {
+                    echo "[";
+                    if($row['allroom']==1){
+                        echo "전체";
+                    }else{
+                        $r=json_decode($row['member']);
+                        $result2=mysqli_query($conn,"select * from user where phone='".$r[0]->phone."'");
+                        $row2=mysqli_fetch_array($result2);
+                        echo $row2['level']."Lv";
+                    }
+                    echo "] ";
                 }
-                if($row['type']==2){
-                    echo "왁자지껄";
-                }
-                if($row['type']==3){
-                    echo "아주큰방";
-                }*/
-                echo "] ";
-                echo $row['name'];
+                if($row['type']==4)
+                {
+                    $r=json_decode($row['name']);
+                    if($r->p1==$_GET['phone'])
+                    {
+                        $result3=mysqli_query($conn,"select * from user where phone='".$r->p2."'");
+                        $row3=mysqli_fetch_array($result3);
+                        echo $row3['name']."님과의 1:1대화";
+                    }else{
+                        $result3=mysqli_query($conn,"select * from user where phone='".$r->p1."'");
+                        $row3=mysqli_fetch_array($result3);
+                        echo $row3['name']."님과의 1:1대화";
+                    }
+                }else
+                    echo $row['name'];
                 echo "</p>";
                 echo "<p style='font-size: 12px; color:#b3b4bd;";
                 echo "padding:0px;";
                 echo "'>";
-                echo "[1/2] ";
+
+
+                
+
+                echo "[".$cur."/".$max."]";
+                //echo "[1/2] ";
+
+
                 $r=json_decode($row['member']);
                 $result2=mysqli_query($conn,"select * from user where phone='".$r[0]->phone."'");
                 $row2=mysqli_fetch_array($result2);

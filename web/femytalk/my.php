@@ -11,6 +11,9 @@
     	<?php
 			include ("dblib.php");
 			$phone=$_GET['phone'];
+			echo "<script>";
+			echo "var p='".$phone."';";
+			echo "</script>";
 			$conn=mysqli_connect($db_host,$db_user,$db_passwd,$db_name);
 			if (!$conn) {
 			    echo "error";
@@ -49,7 +52,7 @@
 					echo "</div>";
 					echo "<div style='display: inline-block; height: 50px; vertical-align: top;";
 					echo "float:right;'>";
-					echo "<div  onclick='talk11()' style='width: 50px; height: 50px; display: inline-block;";
+					echo "<div  onclick='talk(\"".$row['phone']."\")' style='width: 50px; height: 50px; display: inline-block;";
 					echo "border:1px solid #f59593; font-weight: bold;'";
 					echo "class='mr-2'><center style='color:#f59593;'>대 화<br>하 기<center></div>";
 					echo "<div style='width: 50px; height: 50px; display: inline-block;";

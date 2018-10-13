@@ -16,7 +16,11 @@
 	    echo "error";
 	}
 
-	$result=mysqli_query($conn,"insert into user values(null,'$name','$sex','$age','$region','$upto','$url','[]',null,null,'',null,'$phone')");
+	$ret=mysqli_query($conn,"select * from heart");
+	$row=mysqli_fetch_array($ret);
+	$init=$row['init'];
+
+	$result=mysqli_query($conn,"insert into user values(null,'$name','$sex','$age','$region','$upto','$url','[]',null,null,'',null,'$phone',0,$init,'',1,null)");
 	if($result)echo "success";
 	else echo "fail";
 ?>
