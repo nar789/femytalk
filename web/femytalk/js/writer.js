@@ -1,6 +1,6 @@
 window.onload=init();
 function init() {
-	$.get("getuser.php?p="+p,function(d,e){
+	$.get("getuser.php?p="+w,function(d,e){
 		var j=JSON.parse(d);
 		var txt=j.name;
 		var txt2=" ("+j.sex+", "+j.age+", "+j.upto+")";

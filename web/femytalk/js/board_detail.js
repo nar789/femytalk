@@ -1,12 +1,12 @@
 window.onload=init();
-
+var myp=null;
 
 function back(){
 	location.replace("index.php?back=board_list&p="+p);
 }
 
 function init() {
-	
+	myp=p;
 	$(window).resize(function(){
 		updateedit();
 		movescroll();
@@ -164,7 +164,6 @@ function save2(){
 function sendmsg(){
 	var m=$("#msg").val();
 	$("#msg").val("");
-	
 	$.post("setcomment.php",{
 		p:p,
 		content:m,

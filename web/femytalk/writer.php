@@ -5,7 +5,7 @@
 </head>
 <script type="text/javascript">
 <?php
-	echo "var p=\"".$_GET['p']."\";";
+	echo "var w=\"".$_GET['p']."\";";
 	echo "var time=\"".$_GET['time']."\";";
 	echo "var update=\"".$_GET['update']."\";";
 ?>
