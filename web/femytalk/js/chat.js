@@ -23,8 +23,20 @@ function loaddata(){
 }
 
 function back(){
-	var msg="{\"msg\":\"go-home\"}";
-	window.parent.postMessage(msg,"*");
+	if(c.length==1)
+	{
+		$.get("delchat.php?id="+id,function(d,e){
+			if(d=="success")
+			{
+				var msg="{\"msg\":\"go-home\"}";
+				window.parent.postMessage(msg,"*");
+			}
+		});
+	}else{
+		var msg="{\"msg\":\"go-home\"}";
+		window.parent.postMessage(msg,"*");
+	}
+	
 }
 
 function comparedata(){
@@ -157,10 +169,12 @@ function showexit(nick){
 }
 
 function listenmsg(e){
-
 	var r=JSON.parse(e.data);
 	if(r.url){
 		sendimg(r.url);
+	}
+	if(r.msg=="back"){
+		back();
 	}
 
 }

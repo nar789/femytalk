@@ -17,7 +17,7 @@
         </script>
         <div style="background-color: #F17171;
         height: 50px;line-height: 50px;
-        color:white;font-weight: bold; font-size:20px;" class="pl-3 pr-3"><div onclick="location.href='index.php'" style="display: inline-block;margin:0px;"><img src='img/logo.png' style="height: 20px;"></div><!--<img src='img/setup.png' style="
+        color:white;font-weight: bold; font-size:20px;" class="pl-3 pr-3"><div onclick="location.href='index.php'" style="display: inline-block;margin:0px;"><img src='img/chat_btn_back.png' style="height: 20px;"></div><!--<img src='img/setup.png' style="
         width:30px;float:right;margin-top:10px;">//--></div>
         <div style="background-color: #F59593; width:100%; height:1px;"></div>
         <div style="height: 90px; background-color: #f17171;padding-top:10px;">

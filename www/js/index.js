@@ -2,6 +2,59 @@ var file_path = null;
 var my = null;
 var t=null;
 
+
+function iapinit(){
+  store.verbosity = 0;
+  store.error(function(error) {
+      alert('ERROR ' + error.code + ': ' + error.message);
+  });
+  store.register({
+    id: 'femytalk.heart.30000',
+    alias: "30000",
+    type: store.CONSUMABLE
+  });
+  store.register({
+    id: 'femytalk.heart.50000',
+    alias: "50000",
+    type: store.CONSUMABLE
+  });
+  store.register({
+    id: 'femytalk.heart.80000',
+    alias: "80000",
+    type: store.CONSUMABLE
+  });
+  
+  store.ready(function() {
+      //alert("STORE READY");  // This does get called
+  });
+  /*
+  store.when("product").updated(function(p){
+      render(p)
+  });*/
+  store.refresh();
+}
+
+
+//var buyid='';
+function iapOrder(id){
+    store.order(id);
+    store.when(id).approved(function (product) {
+        product.finish();
+        //alert("Purchase Successful");
+        var heart=0;
+        //alert(id);
+        if(id=="femytalk.heart.30000")heart=100;
+        else if(id=="femytalk.heart.50000")heart=200;
+        else if(id=="femytalk.heart.80000")heart=400;
+        $.post("http://kirino16.cafe24.com/setheartplus.php",{
+            p:my,
+            heart:heart
+        },function(d,e){
+            halert("결제가 완료되었습니다.");    
+        });
+    });
+}
+
 /** 카메라 혹은 갤러리 호출 */
 function takePicture(source) {
 
@@ -224,6 +277,10 @@ function getmsg(e){
         $("#invite-accept").attr("onclick","invite("+r.id+")");
         $("#invitebtn").click();
     }
+    else if(r.msg=="iap")
+    {
+        iapOrder(r.id);
+    }
 }
 
 function invite(chatid){
@@ -263,7 +320,9 @@ function onBackKeyDown() {
 function chatexit(){
 
     $("#chat").modal('hide');
-    $("#ifr").attr("src","http://kirino16.cafe24.com/index.php");
+    //$("#ifr").attr("src","http://kirino16.cafe24.com/index.php");
+    var msg="{\"msg\":\"back\"}";
+    document.getElementById("ifr").contentWindow.postMessage(msg,"*");   
 }
 
 function appexit(){
@@ -282,25 +341,27 @@ var app = {
     	window.addEventListener("message",getmsg,false);
     	
         //release
+        ///*
         gn=setInterval(()=>{getnumber();},500);
-
-        FCMPlugin.getToken(function(token){
-                t=token;
-        });
-
-        FCMPlugin.onNotification(function(data){
-                //alert(JSON.stringify(data));
-                
-        });
-        
-
-    	//debug
+        //*/
+        //debug
         /*
             my="01011112222";
             var msg="{\"phone\":\""+my+"\"}";
             document.getElementById("ifr").contentWindow.postMessage(msg,"*");
             $("#intro").animate({opacity:'0'},"slow",function(){ $("#intro").remove(); });
         */
+
+        FCMPlugin.getToken(function(token){
+                t=token; 
+        });
+
+        FCMPlugin.onNotification(function(data){
+                //alert(JSON.stringify(data));
+        });
+        
+        iapinit();
+    	
     	
     	
         $("#photo_camera").click(function() {

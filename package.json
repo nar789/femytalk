@@ -10,6 +10,7 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "dependencies": {
+    "cc.fovea.cordova.purchase": "^7.2.1",
     "com-sarriaroman-photoviewer": "^1.1.18",
     "cordova-android": "^6.3.0",
     "cordova-plugin-camera": "^4.0.3",
@@ -29,7 +30,10 @@
       "cordova-plugin-sim": {},
       "com-sarriaroman-photoviewer": {},
       "cordova-plugin-statusbar": {},
-      "cordova-plugin-fcm": {}
+      "cordova-plugin-fcm": {},
+      "cc.fovea.cordova.purchase": {
+        "BILLING_KEY": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmOnL2vNerkEHgXWbnQkAmb9Arh1AlCLGbcWSz/d/C1hTZOXCWP7/Fqg9mZ4WWRszJ2Lg+fzlfEFD9ubY1pjIqhT6xGOtYlX4zBchv3vxAlLKeXxlIObYMS2azTjrKKZzZBv9QpQkTaHugAbHsrfIDV0hDERgFt7cv8WQ/cpfGGPQ24DIKkYgMnC4OKjFKiSiNtqaINlntgq1iJKjMNYxOuMb4A+A0raMKKGb3NGd76lGD2nORWXnLRUYl52gdfAfgWKcYYph/kRfc4KMGvhQn+FIpGGniZEOLacYbKPONk0Fff0Pjr13cOwUvbANYyEpvxW1tjDSFnnAm6v5iKSlQQIDAQAB"
+      }
     },
     "platforms": [
       "android"

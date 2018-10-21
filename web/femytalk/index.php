@@ -68,14 +68,14 @@
                     <p style="color:white;font-size:12px;width: 45px; text-align: center;margin:0px; padding:0px;">페미판</p>
                     </center>
                 </div>
-                <div class="nav-btn" style="display: inline-block;margin-top:15px; height: 60px; width: 18%;" onclick="menuclick(5)">
+                <div class="nav-btn" style="display: inline-block;margin-top:15px; height: 60px; width: 19%;" onclick="menuclick(5)">
                     <center>
                     <div class="circle" style="width:45px;height:45px;background-color: #F59593; border-radius:45px;line-height: 45px;">
                         <center>
                             <img src='img/mainmenu_off_05.png' style="width: 20px;" id=i5>
                         </center>
                     </div>
-                    <p style="color:white;font-size:12px;width: 45px; text-align: center;margin:0px; padding:0px;">방만들기</p>
+                    <p style="color:white;font-size:12px; width:50px; text-align: center;margin:0px; padding:0px;">방만들기</p>
                     </center>
                 </div>
             </center>

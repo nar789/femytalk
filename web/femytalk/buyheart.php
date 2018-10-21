@@ -29,7 +29,7 @@
         <div class="container pt-1" >
 
                 <div style="height: 60px; width: 100%; border:1px solid #d1d1d1;border-radius: 10px;
-                " class="pl-3 pr-3 mt-2" onclick="buy()">
+                " class="pl-3 pr-3 mt-2" onclick="buy(1)">
 
                     <div style="float:left;width: 60%;" class="mt-2">
                         <div style="font-size: 14px;font-weight: bold;">하트 구매</div>
@@ -40,7 +40,7 @@
                     text-align: right;">30,000</div>
                 </div>
                 <div style="height: 60px; width: 100%; border:1px solid #d1d1d1;border-radius: 10px;
-                " class="pl-3 pr-3 mt-2" onclick="buy()">
+                " class="pl-3 pr-3 mt-2" onclick="buy(2)">
 
                     <div style="float:left;width: 60%;" class="mt-2">
                         <div style="font-size: 14px;font-weight: bold;">하트 구매</div>
@@ -51,7 +51,7 @@
                     text-align: right;">50,000</div>
                 </div>
                 <div style="height: 60px; width: 100%; border:1px solid #d1d1d1;border-radius: 10px;
-                " class="pl-3 pr-3 mt-2" onclick="buy()">
+                " class="pl-3 pr-3 mt-2" onclick="buy(3)">
 
                     <div style="float:left;width: 60%;" class="mt-2">
                         <div style="font-size: 14px;font-weight: bold;">하트 구매</div>
@@ -62,7 +62,7 @@
                     text-align: right;">80,000</div>
                 </div>
                 <div style="height: 60px; width: 100%; border:1px solid #d1d1d1;border-radius: 10px;
-                " class="pl-3 pr-3 mt-2" onclick="buy()">
+                " class="pl-3 pr-3 mt-2" onclick="buylevel(1)" id=lv1-g>
 
                     <div style="float:left;width: 60%;height: 60px; line-height: 60px;">
                         <div style="font-size: 15px;font-weight: bold;">1Lv 구매권</div>
@@ -73,7 +73,7 @@
                 </div>
 
                 <div style="height: 60px; width: 100%; border:1px solid #d1d1d1;border-radius: 10px;
-                " class="pl-3 pr-3 mt-2" onclick="buy()">
+                " class="pl-3 pr-3 mt-2" onclick="buylevel(2)" id=lv2-g>
 
                     <div style="float:left;width: 60%;height: 60px; line-height: 60px;">
                         <div style="font-size: 15px;font-weight: bold;">2Lv 구매권</div>
@@ -84,7 +84,7 @@
                 </div>
 
                 <div style="height: 60px; width: 100%; border:1px solid #d1d1d1;border-radius: 10px;
-                " class="pl-3 pr-3 mt-2" onclick="buy()">
+                " class="pl-3 pr-3 mt-2" onclick="buylevel(3)" id=lv3-g>
 
                     <div style="float:left;width: 60%;height: 60px; line-height: 60px;">
                         <div style="font-size: 15px;font-weight: bold;">3Lv 구매권</div>
