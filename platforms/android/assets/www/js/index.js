@@ -43,9 +43,9 @@ function iapOrder(id){
         //alert("Purchase Successful");
         var heart=0;
         //alert(id);
-        if(id=="femytalk.heart.30000")heart=100;
-        else if(id=="femytalk.heart.50000")heart=200;
-        else if(id=="femytalk.heart.80000")heart=400;
+        if(id=="femytalk.heart.30000")heart=1000;
+        else if(id=="femytalk.heart.50000")heart=2200;
+        else if(id=="femytalk.heart.80000")heart=10000;
         $.post("http://kirino16.cafe24.com/setheartplus.php",{
             p:my,
             heart:heart
@@ -249,6 +249,12 @@ function getmsg(e){
         halert("방만들기가 완료되었습니다.");
         $("#ifr").attr("src","http://kirino16.cafe24.com/chat.php?id="+r.id+"&p="+my);
     }
+    else if(r.msg=="cant-create-chat"){
+        halert("하트가 부족하여 방만들기가 불가능합니다.");
+    }
+    else if(r.msg=="cant-buy-level"){
+        halert("하트가 부족하여 레벨구매가 불가능합니다.");
+    }
     else if(r.msg=="go-chat"){
         $("#ifr").attr("src","http://kirino16.cafe24.com/chat.php?id="+r.id+"&p="+my);
     }
@@ -292,7 +298,9 @@ function getnumber(){
 	window.plugins.sim.requestReadPermission((r)=>{
 		window.plugins.sim.getSimInfo((r)=>{
 			my=r.phoneNumber;
-			var msg="{\"phone\":\""+r.phoneNumber+"\"}";
+            if(my.indexOf('+')==0)
+                my=my.slice(1,my.length);
+			var msg="{\"phone\":\""+my+"\"}";
  			document.getElementById("ifr").contentWindow.postMessage(msg,"*");
             clearInterval(gn);
             $("#intro").animate({opacity:'0'},"slow",function(){ $("#intro").remove(); });
@@ -340,17 +348,27 @@ var app = {
     onDeviceReady: function() {
     	window.addEventListener("message",getmsg,false);
     	
-        //release
-        ///*
-        gn=setInterval(()=>{getnumber();},500);
-        //*/
-        //debug
-        /*
-            my="01011112222";
+
+        $("#ifr").ready(function(){
+            //release
+            ///*
+            gn=setInterval(()=>{getnumber();},500);
+            //*/
+            //debug
+            /*
+            my="01064515355";
+            if(my.indexOf('+')==0)
+                my=my.slice(1,my.length);
             var msg="{\"phone\":\""+my+"\"}";
-            document.getElementById("ifr").contentWindow.postMessage(msg,"*");
-            $("#intro").animate({opacity:'0'},"slow",function(){ $("#intro").remove(); });
-        */
+            
+            $("#intro").animate({opacity:'0'},"slow",function(){ 
+                $("#intro").remove(); 
+                document.getElementById("ifr").contentWindow.postMessage(msg,"*");
+            });
+            */
+        });
+            
+        
 
         FCMPlugin.getToken(function(token){
                 t=token; 

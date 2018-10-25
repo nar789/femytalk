@@ -181,6 +181,12 @@ function getmsg(e){
 	if(r.msg=="3lv-access"){
 		window.parent.postMessage(e.data,"*");
 	}
+	if(r.msg=="cant-create-chat"){
+		window.parent.postMessage(e.data,"*");
+	}
+	if(r.msg=="cant-buy-level"){
+		window.parent.postMessage(e.data,"*");
+	}
 
 }
 

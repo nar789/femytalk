@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.femytalk.app" version="1.0.9" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.femytalk.app" version="1.0.10" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>페미톡</name>
     <description>
     </description>
     <author email="admin@femytalk.com" href="http://femytalk.com">
-        FEMYTALK ADMINISTRATOR
+        FEMYTALK ADMINISTRATOR r7
     </author>
     <content src="index.html" />
     <access origin="*" />

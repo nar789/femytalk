@@ -126,5 +126,8 @@ function getmsg(e){
 	if(r.msg=="iap"){
 		window.parent.postMessage(e.data,"*");
 	}
+	if(r.msg=="cant-buy-level"){
+		window.parent.postMessage(e.data,"*");
+	}
 
 }

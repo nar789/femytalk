@@ -19,15 +19,16 @@ function buy(id){
 
 function buylevel(lv){
 	var h=0;
-	if(lv==1)h=80;
-	else if(lv==2)h=150;
-	else if(lv==3)h=250;
+	if(lv==1)h=1000;
+	else if(lv==2)h=2500;
+	else if(lv==3)h=5000;
 	
 	
 	$.post("setheart.php",{
 		p:p,
 		heart:h
 	},function(d,e){
+		
 		if(d=="success"){
 			$.post("setlevel.php",{
 				p:p,
@@ -39,6 +40,10 @@ function buylevel(lv){
 					location.reload();
 				}
 			});
+		}else if(d=="fail")
+		{
+			var msg="{\"msg\":\"cant-buy-level\"}";
+			window.parent.postMessage(msg,"*");					
 		}
 	});
 }

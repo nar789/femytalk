@@ -34,9 +34,14 @@ function mkroom(){
 					p:p,
 					all:all
 				},(d,e)=>{ 
-
-					var msg="{\"msg\":\"create-chat-success\",\"id\":"+d+"}";
-					window.parent.postMessage(msg,"*");
+					if(d=="fail")
+					{
+						var msg="{\"msg\":\"cant-create-chat\"}";
+						window.parent.postMessage(msg,"*");
+					}else{
+						var msg="{\"msg\":\"create-chat-success\",\"id\":"+d+"}";
+						window.parent.postMessage(msg,"*");
+					}
 				 });
 			}
 		//}

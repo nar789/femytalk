@@ -33,33 +33,33 @@
 
                     <div style="float:left;width: 60%;" class="mt-2">
                         <div style="font-size: 14px;font-weight: bold;">하트 구매</div>
-                        <div style="font-size:12px;">하트 100개 제공</div>
+                        <div style="font-size:12px;">하트 1000개 제공</div>
                     </div>
 
                     <div style="float:right;color:#f07171;height: 60px; line-height: 60px;width: 40%;
-                    text-align: right;">30,000</div>
+                    text-align: right;">5,000</div>
                 </div>
                 <div style="height: 60px; width: 100%; border:1px solid #d1d1d1;border-radius: 10px;
                 " class="pl-3 pr-3 mt-2" onclick="buy(2)">
 
                     <div style="float:left;width: 60%;" class="mt-2">
                         <div style="font-size: 14px;font-weight: bold;">하트 구매</div>
-                        <div style="font-size:12px;">하트 200개 제공</div>
+                        <div style="font-size:12px;">하트 2200개 제공</div>
                     </div>
 
                     <div style="float:right;color:#f07171;height: 60px; line-height: 60px;width: 40%;
-                    text-align: right;">50,000</div>
+                    text-align: right;">10,000</div>
                 </div>
                 <div style="height: 60px; width: 100%; border:1px solid #d1d1d1;border-radius: 10px;
                 " class="pl-3 pr-3 mt-2" onclick="buy(3)">
 
                     <div style="float:left;width: 60%;" class="mt-2">
                         <div style="font-size: 14px;font-weight: bold;">하트 구매</div>
-                        <div style="font-size:12px;">하트 400개 제공</div>
+                        <div style="font-size:12px;">하트 10000개 제공</div>
                     </div>
 
                     <div style="float:right;color:#f07171;height: 60px; line-height: 60px;width: 40%;
-                    text-align: right;">80,000</div>
+                    text-align: right;">20,000</div>
                 </div>
                 <div style="height: 60px; width: 100%; border:1px solid #d1d1d1;border-radius: 10px;
                 " class="pl-3 pr-3 mt-2" onclick="buylevel(1)" id=lv1-g>
@@ -69,7 +69,7 @@
                     </div>
 
                     <div style="float:right;color:#f07171;height: 60px; line-height: 60px;width: 40%;
-                    text-align: right;">80하트</div>
+                    text-align: right;">1000하트</div>
                 </div>
 
                 <div style="height: 60px; width: 100%; border:1px solid #d1d1d1;border-radius: 10px;
@@ -80,7 +80,7 @@
                     </div>
 
                     <div style="float:right;color:#f07171;height: 60px; line-height: 60px;width: 40%;
-                    text-align: right;">150하트</div>
+                    text-align: right;">2500하트</div>
                 </div>
 
                 <div style="height: 60px; width: 100%; border:1px solid #d1d1d1;border-radius: 10px;
@@ -91,7 +91,7 @@
                     </div>
 
                     <div style="float:right;color:#f07171;height: 60px; line-height: 60px;width: 40%;
-                    text-align: right;">250하트</div>
+                    text-align: right;">5000하트</div>
                 </div>
                
 

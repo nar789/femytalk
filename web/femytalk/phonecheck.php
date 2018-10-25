@@ -1,6 +1,6 @@
 <?php
 	include ("dblib.php");
-	$phone=$_GET['phone'];
+	$phone=$_POST['phone'];
 	$conn=mysqli_connect($db_host,$db_user,$db_passwd,$db_name);
 	if (!$conn) {
 	    echo "error";

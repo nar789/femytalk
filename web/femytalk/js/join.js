@@ -5,11 +5,13 @@ function photo(){
 	window.parent.postMessage(msg,"*");
 }
 
-window.addEventListener("message",getmsg,false);
+
 
 window.onload=init();
 
 function init(){
+
+	window.addEventListener("message",getmsg,false);
 
 	load_city_name();
 
@@ -44,7 +46,9 @@ function getmsg(e){
 	if(r.phone)
 	{
 		phone=r.phone;
-		$.get("phonecheck.php?phone="+phone,function(d,e){
+		$.post("phonecheck.php",{
+			phone:phone
+		},function(d,e){
 			if(d!=0){
 				location.replace("index.php");
 			}
