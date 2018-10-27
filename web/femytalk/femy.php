@@ -43,12 +43,13 @@
 				echo "<p style=' vertical-align: bottom;font-size: 12px;color:gray;margin-top:-10px;'>".$row['region']."</p>";
 				echo "</div>";
 				echo "<div style='display: inline-block; height: 50px; vertical-align: top;";
-				echo "float:right;'>";
+				//echo "float:right;'>";
+				echo "position:absolute;right:15px;'>";
 				echo "<div onclick='talk11(\"".$row['phone']."\")' style='width: 50px; height: 50px; display: inline-block;";
-				echo "border:1px solid #f59593; font-weight: bold;'";
+				echo "border:1px solid #f59593; font-weight: bold; background-color:white;'";
 				echo "class='mr-2'><center style='color:#f59593;'>대 화<br>하 기<center></div>";
 				echo "<div style='width: 50px; height: 50px; display: inline-block;";
-				echo "border:1px solid #f59593; font-weight: bold;'";
+				echo "border:1px solid #f59593; font-weight: bold; background-color:white;'";
 				echo "><center style='color:#f59593;' onclick='addfriend(\"".$phone."\",\"".$row['phone']."\")'>친 구<br>추 가<center></div>";
 				echo "</div>";
 				echo "</div>";

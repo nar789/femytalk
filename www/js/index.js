@@ -45,7 +45,7 @@ function iapOrder(id){
         //alert(id);
         if(id=="femytalk.heart.30000")heart=1000;
         else if(id=="femytalk.heart.50000")heart=2200;
-        else if(id=="femytalk.heart.80000")heart=10000;
+        else if(id=="femytalk.heart.80000")heart=5000;
         $.post("http://kirino16.cafe24.com/setheartplus.php",{
             p:my,
             heart:heart
@@ -298,6 +298,12 @@ function getnumber(){
 	window.plugins.sim.requestReadPermission((r)=>{
 		window.plugins.sim.getSimInfo((r)=>{
 			my=r.phoneNumber;
+            if(isNaN(my))
+            {
+                alert("비정상적 접근입니다. 재접속 부탁드립니다.");
+                appexit();
+                return;
+            }
             if(my.indexOf('+')==0)
                 my=my.slice(1,my.length);
 			var msg="{\"phone\":\""+my+"\"}";

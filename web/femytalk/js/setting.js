@@ -37,7 +37,7 @@ function menuclick(id){
 	}else if(id==2){
 		$("#ifr").attr("src","buyheart.php?p="+phone);
 	}else if(id==3){
-		location.href="join6.php?p="+phone;
+		location.href="join7.php?p="+phone;
 	}
 }
 

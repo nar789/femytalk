@@ -24,7 +24,7 @@
                 <table class="table table-hover" >
                     <thead>
                         <tr>
-                          <th scope="col">초기가입 하트 소모량</th>
+                          <th scope="col">초기가입 하트 충전량</th>
                           <th scope="col">오붓한방(2명) 하트 소모량</th>
                           <th scope="col">왁자지껄(10명) 하트 소모량</th>
                           <th scope="col">아주큰방(20명) 하트 소모량</th>

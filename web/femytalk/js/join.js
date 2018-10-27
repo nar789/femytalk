@@ -65,6 +65,12 @@ function getmsg(e){
 
 function namecheck(){
 	var name=$("#name").val();
+	if(name=="")
+	{
+		var msg="{\"msg\":\"name-check-fail\"}";
+		window.parent.postMessage(msg,"*");
+		return;
+	}
 	$.get("namecheck.php?name="+name,function(d,s){
 		if(d=="0"){
 			check=1;

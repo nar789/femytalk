@@ -55,7 +55,7 @@
 
                     <div style="float:left;width: 60%;" class="mt-2">
                         <div style="font-size: 14px;font-weight: bold;">하트 구매</div>
-                        <div style="font-size:12px;">하트 10000개 제공</div>
+                        <div style="font-size:12px;">하트 5000개 제공</div>
                     </div>
 
                     <div style="float:right;color:#f07171;height: 60px; line-height: 60px;width: 40%;
