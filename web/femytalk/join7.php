@@ -146,9 +146,17 @@
 
     			<select id=upto style="float:right;border:0px;color:#f07171; width:60px;background-color: transparent;
 	    			height: 40px;width:120px;">
-	    				<option selected="selected">인터넷광고</option>
-                        <option>여성시대</option>
-                        <option>검색</option>
+	    				<option selected="selected">여성시대</option>
+                        <option>워마드</option>
+                        <option>쭉빵</option>
+                        <option>인스티즈</option>
+                        <option>더쿠</option>
+                        <option>레몬테라스</option>
+                        <option>파우더룸</option>
+                        <option>네이트판</option>
+                        <option>맘스홀릭</option>
+                        <option>페북</option>
+                        <option>인스타</option>
 	    		</select>
     			
     		</div>
