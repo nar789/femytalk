@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "659781802279",
-    "firebase_url": "https://femytalk.firebaseio.com",
-    "project_id": "femytalk",
-    "storage_bucket": "femytalk.appspot.com"
+    "project_number": "695981173008",
+    "firebase_url": "https://femytalk2.firebaseio.com",
+    "project_id": "femytalk2",
+    "storage_bucket": "femytalk2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:659781802279:android:7da5066f44bd2010",
+        "mobilesdk_app_id": "1:695981173008:android:af001108e9acf312",
         "android_client_info": {
-          "package_name": "com.femytalk.app"
+          "package_name": "com.talkfe.apa1"
         }
       },
       "oauth_client": [
         {
-          "client_id": "659781802279-39uir8id74lqoi6jbe5302nm2rhse95r.apps.googleusercontent.com",
+          "client_id": "695981173008-qrh9l1ik78ui1oup9iklveivq660e9sg.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAK7nvEYTzWRd2b03Ca7aXXoV2iqYjpn8I"
+          "current_key": "AIzaSyCrOuRguNSH3VoPbGAtWkPfkqfCRIdsW2s"
         }
       ],
       "services": {

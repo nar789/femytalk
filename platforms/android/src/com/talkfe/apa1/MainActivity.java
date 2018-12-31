@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.femytalk.app;
+package com.talkfe.apa1;
 
 import android.os.Bundle;
 import org.apache.cordova.*;

@@ -46,7 +46,7 @@ function iapOrder(id){
         if(id=="femytalk.heart.30000")heart=1000;
         else if(id=="femytalk.heart.50000")heart=2200;
         else if(id=="femytalk.heart.80000")heart=5000;
-        $.post("http://kirino16.cafe24.com/setheartplus.php",{
+        $.post("https://kirino16.cafe24.com/setheartplus.php",{
             p:my,
             heart:heart
         },function(d,e){
@@ -148,7 +148,7 @@ function file_upload(){
     var ft = new FileTransfer();
  
     /** 업로드를 수행한다.(전송할 파일 경로, 서버 주소, 성공콜백, 실패콜백, 옵션) */
-    ft.upload(file_path, "http://kirino16.cafe24.com/upload.php", 
+    ft.upload(file_path, "https://kirino16.cafe24.com/upload.php", 
         function(response) {
             // HTTP 결과코드 받기
             if (response.responseCode !== 200) {
@@ -247,7 +247,7 @@ function getmsg(e){
     }
     else if(r.msg=="create-chat-success"){
         halert("방만들기가 완료되었습니다.");
-        $("#ifr").attr("src","http://kirino16.cafe24.com/chat.php?id="+r.id+"&p="+my);
+        $("#ifr").attr("src","https://kirino16.cafe24.com/chat.php?id="+r.id+"&p="+my);
     }
     else if(r.msg=="cant-create-chat"){
         halert("하트가 부족하여 방만들기가 불가능합니다.");
@@ -256,13 +256,13 @@ function getmsg(e){
         halert("하트가 부족하여 레벨구매가 불가능합니다.");
     }
     else if(r.msg=="go-chat"){
-        $("#ifr").attr("src","http://kirino16.cafe24.com/chat.php?id="+r.id+"&p="+my);
+        $("#ifr").attr("src","https://kirino16.cafe24.com/chat.php?id="+r.id+"&p="+my);
     }
     else if(r.msg=="go-board-detail"){
-        $("#ifr").attr("src","http://kirino16.cafe24.com/board_detail.php?id="+r.id+"&p="+my);
+        $("#ifr").attr("src","https://kirino16.cafe24.com/board_detail.php?id="+r.id+"&p="+my);
     }
     else if(r.msg=="go-board-create"){
-        $("#ifr").attr("src","http://kirino16.cafe24.com/board_detail.php?p="+my);
+        $("#ifr").attr("src","https://kirino16.cafe24.com/board_detail.php?p="+my);
     }
     else if(r.msg=="get-phone"){
         var msg="{\"phone\":\""+my+"\"}";
@@ -291,7 +291,7 @@ function getmsg(e){
 
 function invite(chatid){
     $("#invite").modal('hide');
-    $("#ifr").attr("src","http://kirino16.cafe24.com/chat.php?id="+chatid+"&p="+my);    
+    $("#ifr").attr("src","https://kirino16.cafe24.com/chat.php?id="+chatid+"&p="+my);    
 }
 
 function getnumber(){

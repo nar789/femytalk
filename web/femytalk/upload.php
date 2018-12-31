@@ -61,7 +61,7 @@
 			}// 실질적으로 업로드 시키는 구문
 
 
-	echo "http://kirino16.cafe24.com/files/".$upload_filename;
+	echo "https://kirino16.cafe24.com/files/".$upload_filename;
 
 	//$imgurl="./img/".$fileName;
 			/*

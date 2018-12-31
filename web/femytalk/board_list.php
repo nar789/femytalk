@@ -37,7 +37,7 @@
 					' class='mr-2'>
 						<center><div style='width: 44px; height: 44px; 
 						margin-top: 2px;'>
-							<img src='http://kirino16.cafe24.com/img/unknown_thumbnail.png' class=img<?=$row['writer']?> style="width: 44px; height: 44px;">
+							<img src='https://kirino16.cafe24.com/img/unknown_thumbnail.png' class=img<?=$row['writer']?> style="width: 44px; height: 44px;">
 						</div></center>
 					</div>
 					<div style='display: inline-block;margin-top:8px;'><div style='color:gray; font-weight: bold;display: inline-block; font-size: 15px;' class=info<?=$row['writer']?>></div><div style='color:gray; font-weight: bold;display: inline-block; font-size:13px;' class=info2<?=$row['writer']?>></div>
