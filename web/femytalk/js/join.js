@@ -103,7 +103,7 @@ function save(){
 		//var msg="{\"msg\":\"photo-none\"}";
 		//window.parent.postMessage(msg,"*");
 		//return false;	
-		url="https://kirino16.cafe24.com/img/unknown_thumbnail.png";
+		url="https://femytalk.com/img/unknown_thumbnail.png";
 	}
 	if(p)
 	{

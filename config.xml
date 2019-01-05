@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.talkfe.apa1" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.talkfe.apa1" version="1.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>페미톡</name>
     <description>
     </description>
-    <author email="admin@femytalk.com" href="http://femytalk.com">
-        FEMYTALK r12
+    <author email="admin@femytalk.com" href="https://femytalk.com">
+        FEMYTALK r15
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <allow-navigation href="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
@@ -25,6 +26,7 @@
     <preference name="StatusBarBackgroundColor" value="#f07171" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <engine name="android" spec="^6.3.0" />
+    <engine name="browser" spec="^5.0.4" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
     <plugin name="cordova-plugin-camera" spec="^4.0.3" />
     <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
@@ -35,4 +37,5 @@
     <plugin name="cc.fovea.cordova.purchase" spec="^7.2.1">
         <variable name="BILLING_KEY" value="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmOnL2vNerkEHgXWbnQkAmb9Arh1AlCLGbcWSz/d/C1hTZOXCWP7/Fqg9mZ4WWRszJ2Lg+fzlfEFD9ubY1pjIqhT6xGOtYlX4zBchv3vxAlLKeXxlIObYMS2azTjrKKZzZBv9QpQkTaHugAbHsrfIDV0hDERgFt7cv8WQ/cpfGGPQ24DIKkYgMnC4OKjFKiSiNtqaINlntgq1iJKjMNYxOuMb4A+A0raMKKGb3NGd76lGD2nORWXnLRUYl52gdfAfgWKcYYph/kRfc4KMGvhQn+FIpGGniZEOLacYbKPONk0Fff0Pjr13cOwUvbANYyEpvxW1tjDSFnnAm6v5iKSlQQIDAQAB" />
     </plugin>
+    <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
 </widget>

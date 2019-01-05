@@ -31,6 +31,9 @@
     "cc.fovea.cordova.purchase": {
       "BILLING_KEY": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmOnL2vNerkEHgXWbnQkAmb9Arh1AlCLGbcWSz/d/C1hTZOXCWP7/Fqg9mZ4WWRszJ2Lg+fzlfEFD9ubY1pjIqhT6xGOtYlX4zBchv3vxAlLKeXxlIObYMS2azTjrKKZzZBv9QpQkTaHugAbHsrfIDV0hDERgFt7cv8WQ/cpfGGPQ24DIKkYgMnC4OKjFKiSiNtqaINlntgq1iJKjMNYxOuMb4A+A0raMKKGb3NGd76lGD2nORWXnLRUYl52gdfAfgWKcYYph/kRfc4KMGvhQn+FIpGGniZEOLacYbKPONk0Fff0Pjr13cOwUvbANYyEpvxW1tjDSFnnAm6v5iKSlQQIDAQAB",
       "PACKAGE_NAME": "com.femytalk.app"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.talkfe.apa1"
     }
   },
   "dependent_plugins": {

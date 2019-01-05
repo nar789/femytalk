@@ -22,7 +22,7 @@
     		<center><div onclick="photo();" style="width:120px; height: 120px; background-color: #f59593; border-radius: 150px;
     		line-height: 120px;"
     			class="mt-3">
-    				<img id=photo2 src="https://kirino16.cafe24.com/img/unknown_thumbnail.png" style="display: none;width: 100%; height: 100%;
+    				<img id=photo2 src="https://femytalk.com/img/unknown_thumbnail.png" style="display: none;width: 100%; height: 100%;
     				border-radius: 50px;">
     				<img id=photo src='img/join_thumbnail_camera.png' style="width:50px;">
     				<div id=plus style="width:40px;height:40px;background-color: white;

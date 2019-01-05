@@ -1,0 +1,10 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "페미톡",
+  "short_name": "페미톡",
+  "version": "com.talkfe.apa1",
+  "author": "FEMYTALK r13",
+  "icons": [],
+  "start_url": "https://femytalk.com"
+}

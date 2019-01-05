@@ -17,7 +17,7 @@
 			' class='mr-2'>
 				<center><div style='width: 44px; height: 44px; 
 				margin-top: 2px;'>
-					<img src='https://kirino16.cafe24.com/img/unknown_thumbnail.png' id=img style="width: 44px; height: 44px;">
+					<img src='https://femytalk.com/img/unknown_thumbnail.png' id=img style="width: 44px; height: 44px;">
 				</div></center>
 			</div>
 			<div style='display: inline-block;height: 40px;margin-top: 5px;'>
