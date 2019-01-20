@@ -8,11 +8,13 @@ function talk(p2){
 	
 	$.get("getuser.php?p="+p,function(d,e){
 		var r=JSON.parse(d);
+		/*
 		if(r.level<2){
 			var msg="{\"msg\":\"2lv-access\"}";
 			window.parent.postMessage(msg,"*");
 			return;			
-		}else{
+		}else*/
+		{			
 			mkroom(p,p2);
 		}
 	});

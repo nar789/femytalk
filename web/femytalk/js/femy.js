@@ -10,11 +10,13 @@ function talk11(p2){
 
 	$.get("getuser.php?p="+p,function(d,e){
 		var r=JSON.parse(d);
+		/*
 		if(r.level<2){
 			var msg="{\"msg\":\"2lv-access\"}";
 			window.parent.postMessage(msg,"*");
 			return;			
-		}else{
+		}else*/
+		{
 			mkroom(p,p2);
 		}
 	});
@@ -50,11 +52,13 @@ function addfriend(p,f){
 	
 	$.get("getuser.php?p="+p,function(d,e){
 		var r=JSON.parse(d);
+		/*
 		if(r.level<1){
 			var msg="{\"msg\":\"1lv-access\"}";
 			window.parent.postMessage(msg,"*");
 			return;			
-		}else{
+		}else*/
+		{
 			$.get("addfriend.php?p="+p,function(d,e){
 				var r=JSON.parse(d);
 				var fail=0;
